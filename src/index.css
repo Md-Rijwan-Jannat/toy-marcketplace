@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.font-style {
+    font-family: 'Permanent Marker', cursive;
+}
+.style{
+    font-family: 'Bruno Ace SC', cursive;
+}

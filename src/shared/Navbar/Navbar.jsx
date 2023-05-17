@@ -5,6 +5,9 @@ const Navbar = () => {
     const routes = <>
         <li><Link className='font-semibold' to={'/'}>Home</Link></li>
         <li><Link className='font-semibold' to={'/allToys'}>All Toys</Link></li>
+        <li><Link className='font-semibold' to={'/allToys'}>All Toys</Link></li>
+        <li><Link className='font-semibold' to={'/myToys'}>MyToys</Link></li>
+        <li><Link className='font-semibold' to={'/login'}>Login</Link></li>
         <li><Link className='font-semibold' to={'/blogs'}>Blogs</Link></li>
     </>
     return (
