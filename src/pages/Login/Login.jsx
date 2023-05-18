@@ -1,13 +1,29 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider/AuthProvider';
+import { toast } from 'react-hot-toast';
+import Google from '../../shared/GoogleProvider/Google';
 
 const Login = () => {
+    const { loginUser } = useContext(AuthContext);
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password)
+
+        loginUser(email, password)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                form.reset('')
+                toast.success("Successfully login")
+            })
+            .catch(error => {
+                console.log(error)
+                toast.error(error.message);
+            })
     }
     return (
         <div className="hero min-h-screen">
@@ -39,6 +55,7 @@ const Login = () => {
                         </div>
                         <p className='text-center my-5'>You don't have a account? <Link className='text-blue-500 font-bold' to={'/register'}>Please register</Link></p>
                     </div>
+                    <Google></Google>
                 </form>
             </div>
         </div>

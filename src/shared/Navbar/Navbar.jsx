@@ -1,14 +1,34 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider/AuthProvider';
+import { toast } from 'react-hot-toast';
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
+    const logOutHandler = () => {
+        logOut()
+            .then(result => {
+                console.log(result);
+                toast.success("Successfully log out");
+            })
+            .catch(error => {
+                console.log(error)
+                toast.error(error.message);
+            })
+    }
     const routes = <>
         <li><Link className='font-semibold' to={'/'}>Home</Link></li>
         <li><Link className='font-semibold' to={'/allToys'}>All Toys</Link></li>
-        <li><Link className='font-semibold' to={'/allToys'}>All Toys</Link></li>
-        <li><Link className='font-semibold' to={'/myToys'}>MyToys</Link></li>
-        <li><Link className='font-semibold' to={'/login'}>Login</Link></li>
+        {
+            user ? <>
+                <li><Link className='font-semibold' to={'/myToys'}>MyToys</Link></li>
+                <li><Link className='font-semibold' onClick={logOutHandler} >Logout</Link></li>
+            </> :
+                <li><Link className='font-semibold' to={'/login'}>Login</Link></li>
+        }
+        
         <li><Link className='font-semibold' to={'/blogs'}>Blogs</Link></li>
+
     </>
     return (
         <div className="navbar bg-base-200 border rounded-b-lg">
@@ -29,7 +49,9 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Get started</a>
+                {
+                    user?.photoURL ? <img className='rounded-full' src={user?.photoURL} alt="" /> : <img className='rounded-full w-24' src="https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI=" alt="" />
+                }
             </div>
         </div>
     );
