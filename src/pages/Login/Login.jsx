@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider/AuthProvider';
 import { toast } from 'react-hot-toast';
 import Google from '../../shared/GoogleProvider/Google';
 
 const Login = () => {
+    const [show, setShow] = useState(false)
     const { loginUser } = useContext(AuthContext);
     const handleLogin = event => {
         event.preventDefault();
@@ -26,14 +27,14 @@ const Login = () => {
             })
     }
     return (
-        <div className="hero min-h-screen">
+        <div className="hero my-16">
             <div className="hero-content flex-col justify-around lg:flex-row-reverse w-full">
                 <div className="flex flex-col justify-center items-center lg:text-left md:w-1/">
                     <h2 className='text-4xl style text-secondary md:w-1/2'><span className='text-primary'>Login</span> our toy sports <span className='text-primary'>car site</span></h2>
                     <img className='w-64' src="https://static.vecteezy.com/system/resources/previews/013/923/543/original/blue-car-logo-png.png" alt="" />
                 </div>
-                <form onSubmit={handleLogin} className="card flex-shrink-0 md:w-1/2 max-w-sm bg-base-100">
-                    <div className="card-body border rounded">
+                <form onSubmit={handleLogin} className="flex-shrink-0 md:w-1/2 max-w-sm bg-base-100">
+                    <div className=" border rounded-lg p-8 shadow-xl">
                         <h2 className='text-2xl font-bold mb-5 text-primary'>Login</h2>
                         <div className="form-control">
                             <label className="label">
@@ -45,9 +46,12 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text font-bold">Password</span>
                             </label>
-                            <input name='password' required type="password" placeholder="password" className="input input-bordered" />
+                            <input name='password' required type={show ? 'password' : 'text'} placeholder="password" className="input input-bordered" />
                             <label className="label">
-                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                <a href="#" onClick={() => setShow(!show)} className="label-text-alt link link-hover font-bold">{
+                                    show? <p>Show password</p> : <p>Hide password</p>
+                                }
+                                </a>
                             </label>
                         </div>
                         <div className="form-control mt-6">

@@ -41,16 +41,16 @@ const Reviews = () => {
     ];
 
     return (
-        <div className='my-16'>
+        <div className='my-16 flex flex-col items-center'>
             <div className='flex flex-col justify-center items-center w-full mb-16'>
                 <h2 className='text-3xl style'>Customer Reviews</h2>
                 <hr className='w-1/3' />
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                 {reviews.map((review) => (
-                    <div key={review.id} className="w-64 bg-white shadow-md rounded-lg p-4 m-4">
+                    <div key={review.id} className="w-full bg-white shadow-md rounded-lg p-4">
                         <img className='w-16 h-16 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2' src={review.img} alt="" />
-                        <h2 className="text-lg font-semibold">{review.name}</h2>
+                        <h2 className="text-lg font-bold">{review.name}</h2>
                         <p className="mt-2"><span className='font-bold'>Comment: </span> {review.comment}</p>
                         <div className="flex items-center mt-4">
                             <span className="text-yellow-500">{review.rating}</span>

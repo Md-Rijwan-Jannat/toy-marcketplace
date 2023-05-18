@@ -28,7 +28,7 @@ const Gallery = () => {
                                 <img src="https://m.media-amazon.com/images/I/71N+LTwtNJL.jpg" alt="" />
                             </div>
                             <div className="card-content">
-                                <span className='text-xl mb-5'> Atractive cars</span>
+                                <span className='text-xl font-bold pb-5'> Atractive cars</span>
                             </div>
                         </div>
                         <div className="card swiper-slide shadow-2xl">
@@ -36,7 +36,7 @@ const Gallery = () => {
                                 <img src="https://thumbs.dreamstime.com/b/vintage-red-car-toy-model-kids-automotive-cute-engine-s-parking-traffic-driving-clean-playful-childhood-sport-sports-toys-race-157499923.jpg" alt="" />
                             </div>
                             <div className="card-content">
-                                <span className='text-xl mb-5'> Old cars</span>
+                                <span className='text-xl font-bold pb-5'> Old cars</span>
                             </div>
                         </div>
                         <div className="card swiper-slide shadow-2xl">
@@ -44,7 +44,7 @@ const Gallery = () => {
                                 <img src="https://wallpaperaccess.com/full/2896369.jpg" alt="" />
                             </div>
                             <div className="card-content">
-                                <span className='text-xl mb-5'> Fansy cars</span>
+                                <span className='text-xl font-bold pb-5'> Fansy cars</span>
                             </div>
                         </div>
                         <div className="card swiper-slide shadow-2xl">
@@ -52,7 +52,7 @@ const Gallery = () => {
                                 <img src="https://images.pexels.com/photos/2767818/pexels-photo-2767818.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" />
                             </div>
                             <div className="card-content">
-                                <span className='text-xl mb-5'> Driling cars</span>
+                                <span className='text-xl font-bold pb-5'> Driling cars</span>
                             </div>
                         </div>
                         <div className="card swiper-slide shadow-2xl">
@@ -60,7 +60,7 @@ const Gallery = () => {
                                 <img src="https://images.pexels.com/photos/2767817/pexels-photo-2767817.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
                             </div>
                             <div className="card-content">
-                                <span className='text-xl mb-5'> Rovar cars</span>
+                                <span className='text-xl font-bold pb-5'> Rovar cars</span>
                             </div>
                         </div>
                         <div className="card swiper-slide shadow-2xl">
@@ -68,7 +68,7 @@ const Gallery = () => {
                                 <img src="https://www.whatdowedoallday.com/wp-content/uploads/2020/03/toy-car-play-ideas-feature.jpg" alt="" />
                             </div>
                             <div className="card-content">
-                                <span className='text-xl mb-5'> Track cars</span>
+                                <span className='text-xl font-bold pb-5'> Track cars</span>
                             </div>
                         </div>
 
