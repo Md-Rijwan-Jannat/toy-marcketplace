@@ -15,12 +15,41 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=EB+Garamond:wght@800&family=Manrope:wght@800&family=Permanent+Marker&family=Poppins:ital,wght@0,500;1,700&family=Work+Sans:ital,wght@1,700&display=swap"
     rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=EB+Garamond:wght@800&family=Manrope:wght@800&family=Permanent+Marker&family=Poppins:ital,wght@0,500;1,700&family=Quicksand:wght@300&family=Work+Sans:ital,wght@1,700&display=swap"
+    rel="stylesheet">
   <title>Sports toy cars</title>
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 </head>
 
 <body class="max-w-screen-xl mx-auto font-sans">
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });
+  </script>
 </body>
 
 </html>
