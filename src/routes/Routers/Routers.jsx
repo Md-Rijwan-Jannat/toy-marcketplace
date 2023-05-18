@@ -8,6 +8,7 @@ import ErrorPage from "../../shared/ErrorPage/ErrorPage";
 import Login from "../../pages/Login/Login";
 import Register from "../../pages/Register/Register";
 import Blogs from "../../pages/Blogs/Blogs";
+import AddToys from "../../pages/AddToys/AddToys";
 
   const router = createBrowserRouter([
     {
@@ -30,6 +31,10 @@ import Blogs from "../../pages/Blogs/Blogs";
         {
           path: '/blogs',
           element: <Blogs></Blogs>
+        },
+        {
+          path: '/addToy',
+          element: <AddToys></AddToys>
         }
       ]
     },

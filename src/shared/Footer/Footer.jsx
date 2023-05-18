@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaRegCopyright } from "react-icons/fa";
 
 const Footer = () => {
     return (
@@ -14,6 +15,7 @@ const Footer = () => {
                 <a className="link link-hover">Design</a>
                 <a className="link link-hover">Marketing</a>
                 <a className="link link-hover">Advertisement</a>
+                <p className='flex gap-3 mt-10'><FaRegCopyright className='text-xl'></FaRegCopyright> Copyright all right</p>
             </div>
             <div>
                 <span className="footer-title">Company</span>
@@ -21,6 +23,14 @@ const Footer = () => {
                 <a className="link link-hover">Contact</a>
                 <a className="link link-hover">Jobs</a>
                 <a className="link link-hover">Press kit</a>
+            </div>
+            <div>
+                <span className="footer-title">Address</span>
+                <a className="link link-hover">Dhaka-1200 block-B</a>
+                <a className="link link-hover">Bangladesh</a>
+                <a className="link link-hover">India</a>
+                <a className="link link-hover">United State</a>
+                <a className="link link-hover">Argentina</a>
             </div>
             <div>
                 <span className="footer-title">Legal</span>
