@@ -3,14 +3,14 @@ import Banner from '../Banner/Banner';
 import Gallery from '../Gallery/Gallery';
 import Reviews from '../CustomerReview/Reviews';
 import Slider from 'react-slick';
-import CategoryToys from '../CategoryToys/CategoryToys';
+import Categories from '../CategoryToys/Categories';
 
 const Home = () => {
     return (
         <div>
             <Banner></Banner>
             <Gallery></Gallery>
-            <CategoryToys></CategoryToys>
+            <Categories></Categories>
             <Reviews></Reviews>
             <Slider></Slider>
         </div>
