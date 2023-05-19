@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { toast } from 'react-hot-toast';
+import Aos from 'aos';
+import 'aos/dist/aos.css'
 
 const AddToys = () => {
+    useEffect(() => {
+        Aos.init()
+    }, [])
     const addToyHandler = event => {
         event.preventDefault();
         const form = event.target;
@@ -18,27 +23,29 @@ const AddToys = () => {
             toyName, sellerName, email, category, price, rating, quantity, photo, description
         }
         console.log(toysAllInfo);
-        fetch('http://localhost:5000/toys',{
+        fetch('http://localhost:5000/toys', {
             method: "POST",
-            headers:{"content-type": "application/json"},
+            headers: { "content-type": "application/json" },
             body: JSON.stringify(toysAllInfo)
         })
-        .then(res => res.json())
-        .then(data =>{
-            console.log(data)
-            if(data.insertedId){
-                toast.success("Successfully added")
-            }
-        })
-        .catch(error => console.log(error));
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.insertedId) {
+                    toast.success("Successfully added")
+                }
+            })
+            .catch(error => console.log(error));
     }
     return (
         <div className='m-5'>
-            <div className='flex flex-col justify-center items-center w-full my-10'>
+            <div data-aos="fade-up"
+                data-aos-duration="3000" className='flex flex-col justify-center items-center w-full my-10'>
                 <h2 className='text-3xl style'>Add a Toys</h2>
                 <hr className='w-1/3' />
             </div>
-            <form onSubmit={addToyHandler} className='w-full mb-16 space-y-3 border p-3 rounded-xl shadow-2xl md:p-10'>
+            <form data-aos="fade-right"
+                data-aos-duration="3000" onSubmit={addToyHandler} className='w-full mb-16 space-y-3 border p-3 rounded-xl shadow-2xl md:p-10'>
 
 
                 {/* row1 */}

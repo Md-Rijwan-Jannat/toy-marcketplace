@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../Gallery/Gallery.css'
+import Aos from 'aos';
+import 'aos/dist/aos.css'
 
 const Gallery = () => {
+    useEffect(() => {
+        Aos.init();
+    }, [])
     const
         photos = [
 
@@ -15,12 +20,15 @@ const Gallery = () => {
 
         ];
     return (
-        <div>
-            <div className='flex flex-col justify-center items-center w-full mb-16'>
+        <div >
+            <div data-aos="fade-up"
+                data-aos-duration="3000" className='flex flex-col justify-center items-center w-full mb-16'>
                 <h2 className='text-3xl style'>Cars Gallery</h2>
                 <hr className='w-1/3' />
             </div>
-            <div className='body'>
+            <div className='body' data-aos="fade-right"
+                data-aos-offset="300"
+                data-aos-easing="ease-in-sine">
                 <section className="swiper mySwiper overflow-x-scroll ">
                     <div className="swiper-wrapper">
                         <div className="card swiper-slide shadow-2xl">
@@ -49,7 +57,7 @@ const Gallery = () => {
                         </div>
                         <div className="card swiper-slide shadow-2xl">
                             <div className="card-image">
-                                
+
                                 <img src="https://i5.walmartimages.com/asr/2df50d12-b786-4923-acc2-72c35f4b2201.4e5cfd60223e4036e9436e1fb11d3984.jpeg" alt="" />
                             </div>
                             <div className="card-content">
@@ -66,7 +74,7 @@ const Gallery = () => {
                         </div>
                         <div className="card swiper-slide shadow-2xl">
                             <div className="card-image">
-                                
+
                                 <img src="https://cdn11.bigcommerce.com/s-rejby4tfjq/images/stencil/1000x667/products/1992/7782/73346-MMT-YELLOW-L-Lamborghini-Gallardo-Superleggera-Diecast-Model-Toy-Car-det__70725.1591917007.jpg?c=1" alt="" />
                             </div>
                             <div className="card-content">
@@ -74,7 +82,7 @@ const Gallery = () => {
                             </div>
                         </div>
 
-                        
+
                     </div>
                 </section>
             </div>

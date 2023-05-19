@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import Aos from 'aos';
+import 'aos/dist/aos.css'
 
 const Category = ({ category }) => {
+    useEffect(() => {
+        Aos.init()
+    }, [])
     console.log(category)
-    const {_id, photo, price, rating, toyName, } = category
+    const { _id, photo, price, rating, toyName, } = category
     return (
-        <div className='rounded-2xl border shadow-2xl bg-white'>
+        <div data-aos="fade-up"
+            data-aos-duration="700" className='rounded-2xl border shadow-2xl bg-white'>
             <img className='w-full h-[300px] rounded-t-xl border shadow-lg' src={photo} alt="" />
             <div className='p-5'>
                 <h2 className='text-2xl style my-5'>Toy Name: {toyName}</h2>

@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FaTimes } from 'react-icons/fa';
 import Swal from 'sweetalert2';
+import Aos from 'aos';
+import 'aos/dist/aos.css'
 
 const Toys = ({ toy }) => {
+    useEffect(()=>{Aos.init()},[])
     const { _id, toyName, sellerName, email, category, price, rating, quantity, photo, description } = toy;
     const handleDelete = (_id) => {
         Swal.fire({
@@ -48,7 +51,7 @@ const Toys = ({ toy }) => {
         console.log(updateInfo)
     }
     return (
-        <tbody className='border-b'>
+        <tbody data-aos="fade-up" className='border-b'>
             {/* row 1 */}
             <tr>
                 <th>

@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Toy from './Toy';
+import Aos from 'aos';
+import 'aos/dist/aos.css'
 
 const AllToys = () => {
+    useEffect(() => {
+        Aos.init()
+    }, [])
     const [toys, setToys] = useState([])
     useEffect(() => {
         fetch(`http://localhost:5000/toys`)

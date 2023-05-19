@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Aos from 'aos';
+import 
 
 const Toy = ({ toy }) => {
+    useEffect(() => {
+        Aos.init()
+    }, [])
     const { _id, toyName, sellerName, email, category, price, rating, quantity, photo, description } = toy;
     return (
         <tbody className='border-b'>
