@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider/AuthProvider';
 import { toast } from 'react-hot-toast';
 import Google from '../../shared/GoogleProvider/Google';
@@ -7,6 +7,10 @@ import Google from '../../shared/GoogleProvider/Google';
 const Login = () => {
     const [show, setShow] = useState(false)
     const { loginUser } = useContext(AuthContext);
+    const location = useLocation();
+    console.log(location)
+    let from = location.state?.from?.pathname || "/";
+    const navigate = useNavigate();
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
@@ -19,6 +23,7 @@ const Login = () => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
                 form.reset('')
+                navigate(from, {replace: true});
                 toast.success("Successfully login")
             })
             .catch(error => {

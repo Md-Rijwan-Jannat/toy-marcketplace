@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Toy = ({ toy }) => {
     const { _id, toyName, sellerName, email, category, price, rating, quantity, photo, description } = toy;
     return (
-        <tbody>
+        <tbody className='border-b'>
             {/* row 1 */}
             <tr>
                 <th>
@@ -20,7 +20,7 @@ const Toy = ({ toy }) => {
                 </td>
                 <td>{sellerName}</td>
                 <td className='text-red-500'>{category}</td>
-                <td className='text-yellow-500'>{price}</td>
+                <td className='text-yellow-500'>{'$'+price}</td>
                 <td className='text-orange-500'>{quantity}</td>
 
                 <th>

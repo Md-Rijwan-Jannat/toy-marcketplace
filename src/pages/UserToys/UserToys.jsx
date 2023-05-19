@@ -1,21 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import Toy from './Toy';
+import React from 'react';
+import { useLoaderData } from 'react-router-dom';
+import Toys from './Toys';
 
-const AllToys = () => {
-    const [toys, setToys] = useState([])
-    useEffect(() => {
-        fetch(`http://localhost:5000/toys`)
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                setToys(data);
-            })
-            .catch()
-    }, [])
+const UserToys = () => {
+    const userToysForEmail = useLoaderData();
     return (
         <div>
             <div className='flex flex-col items-center my-10 text-primary'>
-                <h2 className='text-3xl style '>All Toys are Here {toys.length}</h2>
+                <h2 className='text-3xl style '>My all Toys {userToysForEmail.length}</h2>
                 <hr className='w-1/3' />
             </div>
             <div className="overflow-x-auto w-full mt-5 mb-10">
@@ -25,29 +17,29 @@ const AllToys = () => {
                         <tr>
                             <th>
                                 <label>
-                                    <input type="checkbox" className="checkbox" />
+                                    <th>Delete</th>
                                 </label>
                             </th>
                             <th>Photo</th>
                             <th>Toy Name</th>
                             <th>Seller Name</th>
-                            <th>Category</th>
+                            <th>You email</th>
                             <th>Price</th>
                             <th>Quantity</th>
-                            <th>Details</th>
+                            <th>Update</th>
                         </tr>
                     </thead>
-                {
-                    toys.map(toy => <Toy
-                        key={toy._id}
-                        toy={toy}
-                    ></Toy>)
-                }
-                
+                    {
+                      userToysForEmail.map(toy=> <Toys
+                      key={toy._id}
+                      toy={toy}
+                      ></Toys>)
+                    }
+
                 </table>
             </div>
         </div>
     );
 };
 
-export default AllToys;
+export default UserToys;

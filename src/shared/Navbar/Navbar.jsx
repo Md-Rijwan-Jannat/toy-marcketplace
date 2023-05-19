@@ -21,7 +21,7 @@ const Navbar = () => {
         <li><Link className='font-semibold' to={'/allToys'}>All Toys</Link></li>
         {
             user ? <>
-                <li><Link className='font-semibold' to={'/myToys'}>My Toys</Link></li>
+                <li><Link className='font-semibold' to={`/myToys/${user?.email}`}>My Toys</Link></li>
                 <li><Link className='font-semibold' to={'/addToy'}>Add A Toy</Link></li>
                 <li><Link className='font-semibold' onClick={logOutHandler} >Logout</Link></li>
             </> :
