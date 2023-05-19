@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <footer className="footer p-10 bg-base-200 text-base-content rounded-t-lg border">
             <div>
-                <img className='w-[150px] h-[150px]' src="https://cdn.shopify.com/s/files/1/0034/9995/0129/files/logo_final-01_copy_876e5cdd-627f-4f27-8a0e-e7601e80e7b9_1200x1200.png?v=1634924327" alt="" />
+            <img className='w-[150px] h-[100px] rounded-3xl' src="https://i.pinimg.com/736x/64/6b/f2/646bf2610a7883197908aeb33d1ad783.jpg" alt="" />
                 <p className='text-ld font-semibold'>The Evolution of the Toy <br /> Industry From Playful Entertainment <br /> to Educational Enrichment</p>
             </div>
             <div>

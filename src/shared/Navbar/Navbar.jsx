@@ -27,7 +27,7 @@ const Navbar = () => {
             </> :
                 <li><Link className='font-semibold' to={'/login'}>Login</Link></li>
         }
-        
+
         <li><Link className='font-semibold' to={'/blogs'}>Blogs</Link></li>
 
     </>
@@ -42,7 +42,12 @@ const Navbar = () => {
                         {routes}
                     </ul>
                 </div>
-                <img className='w-[150px] h-[150px]' src="https://cdn.shopify.com/s/files/1/0034/9995/0129/files/logo_final-01_copy_876e5cdd-627f-4f27-8a0e-e7601e80e7b9_1200x1200.png?v=1634924327" alt="" />
+                <div className='flex gap-2 md:flex-col my-2'>
+                    <img className='w-[150px] h-[100px] rounded-3xl' src="https://i.pinimg.com/736x/64/6b/f2/646bf2610a7883197908aeb33d1ad783.jpg" alt="" />
+                    <div className='mt-2'>
+                        <h2 className= 'font-bold text-lg md:text-xl style'>Toy sports Cars</h2>
+                    </div>
+                </div>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

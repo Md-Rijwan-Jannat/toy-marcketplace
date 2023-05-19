@@ -8,10 +8,10 @@ const Details = () => {
     const { _id, photo, toyName, sellerName, category, price, rating, description, email } = toyDetails;
     return (
         <div className='md:flex items-center gap-10 m-5 md:m-16 my-24 border rounded-2xl shadow-xl'>
-            <div className='w-1/2'>
+            <div className='md:w-1/2'>
                 <img className='w-full h-full rounded-2xl' src={photo} alt="" />
             </div>
-            <div className='w-1/2'>
+            <div className='md:w-1/2'>
                 <div className='space-y-2 p-5'>
                     <h3 className='text-2xl style text-orange-600'>Toy Name : {toyName}</h3>
                     <p className='pb-4 text-sm'>{description}</p>

@@ -41,7 +41,7 @@ const Reviews = () => {
     ];
 
     return (
-        <div className='my-16 flex flex-col items-center'>
+        <div className='my-16 flex flex-col items-center m-5 bg-base-200 rounded-xl shadow-2xl py-16 p-5'>
             <div className='flex flex-col justify-center items-center w-full mb-16'>
                 <h2 className='text-3xl style'>Customer Reviews</h2>
                 <hr className='w-1/3' />

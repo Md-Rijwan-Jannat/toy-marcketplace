@@ -17,7 +17,7 @@ const Banner = () => {
                 <div id="slide1" className="carousel-item relative w-full">
                     <img src="https://p1.pxfuel.com/preview/128/290/464/crafts-hobby-miniature-cars-royalty-free-thumbnail.jpg" className="rounded-xl md:rounded-r-xl w-full" />
                     <div className="absolute flex justify-center left-5 right-5 bottom-0 md:bottom-5">
-                        <h2 className='md:bg-gradient-to-r from-blue-300 to-fuchsia-500 md:px-10 py-1  md:text-4xl brightness-50 text-white md:font-extrabold style'>Sports cars</h2>
+                        <h2 className='lg:bg-gradient-to-r from-blue-300 to-fuchsia-500 md:px-10 py-1  md:text-4xl brightness-50 text-white md:font-extrabold style'>Sports cars</h2>
                     </div>
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide4" className="md:btn btn-circle">❮</a>
@@ -27,7 +27,7 @@ const Banner = () => {
                 <div id="slide2" className="carousel-item relative w-full">
                     <img src="https://media.cnn.com/api/v1/images/stellar/prod/131031091932-50-lambo-1031.jpg?q=w_1920,h_1080,x_0,y_0,c_fill/w_1280" className="rounded-xl md:rounded-r-xl w-full" />
                     <div className="absolute flex justify-center left-5 right-5 bottom-0 md:bottom-5">
-                        <h2 className='md:bg-gradient-to-r from-blue-300 to-fuchsia-500 md:px-10 py-1  md:text-4xl brightness-50 text-white md:font-extrabold style'>Sports cars</h2>
+                        <h2 className='lg:bg-gradient-to-r from-blue-300 to-fuchsia-500 md:px-10 py-1  md:text-4xl brightness-50 text-white md:font-extrabold style'>Sports cars</h2>
                     </div>
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide1" className="md:btn btn-circle">❮</a>
@@ -37,7 +37,7 @@ const Banner = () => {
                 <div id="slide3" className="carousel-item relative w-full">
                     <img src="https://images.drive.com.au/driveau/image/upload/c_fill,f_auto,g_auto,h_144,q_auto:good,w_256/v1/cms/uploads/08NLS29KQx6qTcXkH05e" className="rounded-xl md:rounded-r-xl w-full" />
                     <div className="absolute flex justify-center left-5 right-5 bottom-0 md:bottom-5">
-                        <h2 className='md:bg-gradient-to-r from-blue-300 to-fuchsia-500 md:px-10 py-1  md:text-4xl brightness-50 text-white md:font-extrabold style'>Sports cars</h2>
+                        <h2 className='lg:bg-gradient-to-r from-blue-300 to-fuchsia-500 md:px-10 py-1  md:text-4xl brightness-50 text-white md:font-extrabold style'>Sports cars</h2>
                     </div>
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide2" className="md:btn btn-circle">❮</a>
@@ -47,7 +47,7 @@ const Banner = () => {
                 <div id="slide4" className="carousel-item relative w-full">
                     <img src="https://p1.pxfuel.com/preview/475/202/465/crafts-hobby-miniature-cars-royalty-free-thumbnail.jpg" className="rounded-xl md:rounded-r-xl w-full" />
                     <div className="absolute flex justify-center left-5 right-5 bottom-0 md:bottom-5">
-                        <h2 className='md:bg-gradient-to-r from-blue-300 to-fuchsia-500 md:px-10 py-1  md:text-4xl brightness-50 text-white md:font-extrabold style'>Sports cars</h2>
+                        <h2 className='lg:bg-gradient-to-r from-blue-300 to-fuchsia-500 md:px-10 py-1  md:text-4xl brightness-50 text-white md:font-extrabold style'>Sports cars</h2>
                     </div>
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide3" className="md:btn md:btn-circle">❮</a>
