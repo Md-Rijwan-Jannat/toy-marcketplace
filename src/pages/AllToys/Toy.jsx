@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Aos from 'aos';
-import 
+import 'aos/dist/aos.css'
 
 const Toy = ({ toy }) => {
     useEffect(() => {
@@ -9,7 +9,7 @@ const Toy = ({ toy }) => {
     }, [])
     const { _id, toyName, sellerName, email, category, price, rating, quantity, photo, description } = toy;
     return (
-        <tbody className='border-b'>
+        <tbody data-aos="fade-up" className='border-b'>
             {/* row 1 */}
             <tr>
                 <th>

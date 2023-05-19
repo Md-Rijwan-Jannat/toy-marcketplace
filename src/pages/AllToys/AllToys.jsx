@@ -5,7 +5,7 @@ import 'aos/dist/aos.css'
 
 const AllToys = () => {
     useEffect(() => {
-        Aos.init()
+        Aos.init();
     }, [])
     const [toys, setToys] = useState([])
     useEffect(() => {
@@ -19,11 +19,12 @@ const AllToys = () => {
     }, [])
     return (
         <div>
-            <div className='flex flex-col items-center my-10 text-primary'>
+            <div data-aos="fade-up"
+                data-aos-duration="3000" className='flex flex-col items-center my-10 text-primary'>
                 <h2 className='text-3xl style '>All Toys are Here {toys.length}</h2>
                 <hr className='w-1/3' />
             </div>
-            <div className="overflow-x-auto w-full mt-5 mb-10">
+            <div className="overflow-x-auto md:overflow-hidden w-full mt-5 mb-10">
                 <table className="table w-full">
                     {/* head */}
                     <thead>
@@ -42,13 +43,13 @@ const AllToys = () => {
                             <th>Details</th>
                         </tr>
                     </thead>
-                {
-                    toys.map(toy => <Toy
-                        key={toy._id}
-                        toy={toy}
-                    ></Toy>)
-                }
-                
+                    {
+                        toys.map(toy => <Toy
+                            key={toy._id}
+                            toy={toy}
+                        ></Toy>)
+                    }
+
                 </table>
             </div>
         </div>
