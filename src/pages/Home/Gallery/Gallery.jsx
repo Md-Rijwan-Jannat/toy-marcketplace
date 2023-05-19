@@ -25,7 +25,7 @@ const Gallery = () => {
                     <div className="swiper-wrapper">
                         <div className="card swiper-slide shadow-2xl">
                             <div className="card-image">
-                                <img src="https://m.media-amazon.com/images/I/71N+LTwtNJL.jpg" alt="" />
+                                <img src="https://ae01.alicdn.com/kf/S2b6fb43eec124d13835f450a35f33c92u.jpg?width=800&height=800&hash=1600" alt="" />
                             </div>
                             <div className="card-content">
                                 <span className='text-xl font-bold pb-5'> Atractive cars</span>
@@ -33,7 +33,7 @@ const Gallery = () => {
                         </div>
                         <div className="card swiper-slide shadow-2xl">
                             <div className="card-image">
-                                <img src="https://thumbs.dreamstime.com/b/vintage-red-car-toy-model-kids-automotive-cute-engine-s-parking-traffic-driving-clean-playful-childhood-sport-sports-toys-race-157499923.jpg" alt="" />
+                                <img src="https://ae01.alicdn.com/kf/Se253ebc78c1f43abaf3751ce6543dbd4o.jpg_640x640Q90.jpg_.webp" alt="" />
                             </div>
                             <div className="card-content">
                                 <span className='text-xl font-bold pb-5'> Old cars</span>
@@ -41,7 +41,7 @@ const Gallery = () => {
                         </div>
                         <div className="card swiper-slide shadow-2xl">
                             <div className="card-image">
-                                <img src="https://wallpaperaccess.com/full/2896369.jpg" alt="" />
+                                <img src="https://ae01.alicdn.com/kf/S2cdaf94c4cb34bc8ad68a8201c8a2293L/1-24-Dom-s-Lamborghini-Gallardo-Superleggera-toy-car-Diecast-model-car-12-y-CN-Origin.jpg_Q90.jpg_.webp" alt="" />
                             </div>
                             <div className="card-content">
                                 <span className='text-xl font-bold pb-5'> Fansy cars</span>
@@ -49,7 +49,8 @@ const Gallery = () => {
                         </div>
                         <div className="card swiper-slide shadow-2xl">
                             <div className="card-image">
-                                <img src="https://images.pexels.com/photos/2767818/pexels-photo-2767818.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" />
+                                
+                                <img src="https://i5.walmartimages.com/asr/2df50d12-b786-4923-acc2-72c35f4b2201.4e5cfd60223e4036e9436e1fb11d3984.jpeg" alt="" />
                             </div>
                             <div className="card-content">
                                 <span className='text-xl font-bold pb-5'> Driling cars</span>
@@ -57,7 +58,7 @@ const Gallery = () => {
                         </div>
                         <div className="card swiper-slide shadow-2xl">
                             <div className="card-image">
-                                <img src="https://images.pexels.com/photos/2767817/pexels-photo-2767817.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+                                <img src="https://ae01.alicdn.com/kf/S2419acaaefa94a9aa5b441f870fff2e1d/1-24-Dom-s-Lamborghini-Gallardo-Superleggera-toy-car-Diecast-model-car-12-y-CN-Origin.jpg_220x220.jpg_.webp" alt="" />
                             </div>
                             <div className="card-content">
                                 <span className='text-xl font-bold pb-5'> Rovar cars</span>
@@ -65,7 +66,8 @@ const Gallery = () => {
                         </div>
                         <div className="card swiper-slide shadow-2xl">
                             <div className="card-image">
-                                <img src="https://www.whatdowedoallday.com/wp-content/uploads/2020/03/toy-car-play-ideas-feature.jpg" alt="" />
+                                
+                                <img src="https://cdn11.bigcommerce.com/s-rejby4tfjq/images/stencil/1000x667/products/1992/7782/73346-MMT-YELLOW-L-Lamborghini-Gallardo-Superleggera-Diecast-Model-Toy-Car-det__70725.1591917007.jpg?c=1" alt="" />
                             </div>
                             <div className="card-content">
                                 <span className='text-xl font-bold pb-5'> Track cars</span>

@@ -8,8 +8,7 @@ const Login = () => {
     const [show, setShow] = useState(false)
     const { loginUser } = useContext(AuthContext);
     const location = useLocation();
-    console.log(location)
-    let from = location.state?.from?.pathname || "/";
+    const from = location.state?.from?.pathname || "/";
     const navigate = useNavigate();
     const handleLogin = event => {
         event.preventDefault();
@@ -23,7 +22,7 @@ const Login = () => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
                 form.reset('')
-                navigate(from, {replace: true});
+                navigate(from, { replace: true });
                 toast.success("Successfully login")
             })
             .catch(error => {
@@ -54,7 +53,7 @@ const Login = () => {
                             <input name='password' required type={show ? 'password' : 'text'} placeholder="password" className="input input-bordered" />
                             <label className="label">
                                 <a href="#" onClick={() => setShow(!show)} className="label-text-alt link link-hover font-bold">{
-                                    show? <p>Show password</p> : <p>Hide password</p>
+                                    show ? <p>Show password</p> : <p>Hide password</p>
                                 }
                                 </a>
                             </label>
