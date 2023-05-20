@@ -37,7 +37,7 @@ const Categories = () => {
                 <TabPanel>
                     {
                         categories ? (
-                            <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
+                            <div className='grid grid-cols-1 md:grid-cols-2 gap-10 p-5 md:p-10'>
                                 {
                                     categories.map(category => <Category
                                         key={category._id}
@@ -51,7 +51,7 @@ const Categories = () => {
                 <TabPanel>
                     {
                         categories ? (
-                            <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
+                            <div className='grid grid-cols-1 md:grid-cols-2 gap-10 p-5 md:p-10'>
                                 {
                                     categories.map(category => <Category
                                         key={category._id}
@@ -59,15 +59,15 @@ const Categories = () => {
                                     ></Category>)
                                 }
                             </div>
-                        ) :  <div className='h-[500px] flex items-center justify-center w-full'>
-                        <progress className="progress w-56"></progress>
-                    </div>
+                        ) : <div className='h-[500px] flex items-center justify-center w-full'>
+                            <progress className="progress w-56"></progress>
+                        </div>
                     }
                 </TabPanel>
                 <TabPanel>
                     {
                         categories ? (
-                            <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
+                            <div className='grid grid-cols-1 md:grid-cols-2 gap-10 p-5 md:p-10'>
                                 {
                                     categories.map(category => <Category
                                         key={category._id}
@@ -75,7 +75,9 @@ const Categories = () => {
                                     ></Category>)
                                 }
                             </div>
-                        ) : <progress className="progress w-56"></progress>
+                        ) : <div className='w-full h-[500px] flex items-center justify-center'>
+                            <progress className="progress w-56"></progress>
+                        </div>
                     }
                 </TabPanel>
             </Tabs>

@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Toy from './Toy';
 import Aos from 'aos';
 import 'aos/dist/aos.css'
+import { AuthContext } from '../../Provider/AuthProvider/AuthProvider';
 
 const AllToys = () => {
+    const { user } = useContext(AuthContext)
     useEffect(() => {
         Aos.init();
     }, [])
@@ -17,6 +19,9 @@ const AllToys = () => {
             })
             .catch()
     }, [])
+    // search button add
+
+    const [searchTerm, setSearchTerm] = useState('');
     return (
         <div>
             <div data-aos="fade-up"
@@ -24,8 +29,16 @@ const AllToys = () => {
                 <h2 className='text-3xl style '>All Toys are Here {toys.length}</h2>
                 <hr className='w-1/3' />
             </div>
-                    <div className="overflow-x-auto md:overflow-hidden w-full mt-5 mb-10">
-                        <table className="table w-full">
+            {/* search */}
+            <div className='flex flex-col space-y-5 items-center rounded-none my-24'>
+                <input type="search" required name='search' placeholder='search' onChange={(e) => setSearchTerm(e.target.value)} className="input input-bordered w-1/3" />
+                <button className='btn'>Search</button>
+            </div>
+
+            {
+                toys ? <div className="overflow-x-auto md:overflow-hidden w-full mt-5 mb-10">
+                    {
+                        user ? <table className="table w-full">
                             {/* head */}
                             <thead>
                                 <tr>
@@ -44,14 +57,20 @@ const AllToys = () => {
                                 </tr>
                             </thead>
                             {
-                                toys.map(toy => <Toy
+                                toys?.filter((toy) => toy.toyName.toLowerCase().includes(searchTerm)).map(toy => <Toy
                                     key={toy._id}
                                     toy={toy}
                                 ></Toy>)
                             }
 
-                        </table>
-                    </div>
+                        </table> : <div className='w-full h-[500px] flex items-center justify-center'>
+                            <progress className="progress w-56"></progress>
+                        </div>
+                    }
+                </div> : <div className='w-full h-[500px] flex items-center justify-center'>
+                    <progress className="progress w-56"></progress>
+                </div>
+            }
         </div>
     );
 };
