@@ -1,19 +1,22 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Aos from 'aos';
 import 'aos/dist/aos.css'
+import { FaAngleRight } from 'react-icons/fa';
 
 const Toy = ({ toy }) => {
     useEffect(() => {
         Aos.init()
     }, [])
-    const { _id, toyName, sellerName, email, category, price, rating, quantity, photo, description } = toy;
+
+
+        const { _id, toyName, sellerName, email, category, price, rating, quantity, photo, description } = toy;
     return (
         <tbody data-aos="fade-up" className='border-b'>
             {/* row 1 */}
             <tr>
                 <th>
-                    <input type="checkbox" className="checkbox" />
+                   <FaAngleRight></FaAngleRight>
                 </th>
                 <td>
                     <div className="w-24 h-24">
@@ -25,7 +28,7 @@ const Toy = ({ toy }) => {
                 </td>
                 <td>{sellerName}</td>
                 <td className='text-red-500'>{category}</td>
-                <td className='text-yellow-500'>{'$'+price}</td>
+                <td className='text-yellow-500'>{'$' + price}</td>
                 <td className='text-orange-500'>{quantity}</td>
 
                 <th>

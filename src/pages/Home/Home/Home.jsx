@@ -4,6 +4,7 @@ import Gallery from '../Gallery/Gallery';
 import Reviews from '../CustomerReview/Reviews';
 import Slider from 'react-slick';
 import Categories from '../CategoryToys/Categories';
+import OurNextShop from '../OurNextShop/OurNextShop';
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
             <Categories></Categories>
             <Reviews></Reviews>
             <Slider></Slider>
+            <OurNextShop></OurNextShop>
         </div>
     );
 };

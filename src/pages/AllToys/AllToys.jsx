@@ -22,6 +22,12 @@ const AllToys = () => {
     // search button add
 
     const [searchTerm, setSearchTerm] = useState('');
+    const [seMore, setSeeMore] = useState(10)
+    const slice = toys.slice(0, seMore)
+
+    const seeMoreHandle = () => {
+        setSeeMore(seMore + seMore)
+    }
     return (
         <div>
             <div data-aos="fade-up"
@@ -37,35 +43,39 @@ const AllToys = () => {
 
             {
                 toys ? <div className="overflow-x-auto md:overflow-hidden w-full mt-5 mb-10"><table className="table w-full">
-                            {/* head */}
-                            <thead>
-                                <tr>
-                                    <th>
-                                        <label>
-                                            <input type="checkbox" className="checkbox" />
-                                        </label>
-                                    </th>
-                                    <th>Photo</th>
-                                    <th>Toy Name</th>
-                                    <th>Seller Name</th>
-                                    <th>Category</th>
-                                    <th>Price</th>
-                                    <th>Quantity</th>
-                                    <th>Details</th>
-                                </tr>
-                            </thead>
-                            {
-                                toys?.filter((toy) => toy.toyName.toLowerCase().includes(searchTerm)).map(toy => <Toy
-                                    key={toy._id}
-                                    toy={toy}
-                                ></Toy>)
-                            }
+                    {/* head */}
+                    <thead>
+                        <tr>
+                            <th>
+                                <label>
+                                    <input type="checkbox" className="checkbox" />
+                                </label>
+                            </th>
+                            <th>Photo</th>
+                            <th>Toy Name</th>
+                            <th>Seller Name</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    {
+                        slice?.filter((toy) => toy.toyName.toLowerCase().includes(searchTerm)).map(toy => <Toy
+                            key={toy._id}
+                            toy={toy}
+                        ></Toy>)
+                    }
 
-                        </table>
+                </table>
                 </div> : <div className='w-full h-[500px] flex items-center justify-center'>
                     <progress className="progress w-56"></progress>
                 </div>
             }
+
+            <div className='flex items-center justify-center my-16 style'>
+                <button onClick={() => seeMoreHandle()} className='btn w-1/2'>See More</button>
+            </div>
         </div>
     );
 };
