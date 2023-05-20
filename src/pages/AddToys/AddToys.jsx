@@ -25,7 +25,7 @@ const AddToys = () => {
             toyName, sellerName, email, category, price, rating, quantity, photo, description
         }
         console.log(toysAllInfo);
-        fetch('http://localhost:5000/toys', {
+        fetch('https://toys-marketplace-server-agmt-11.vercel.app/toys', {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(toysAllInfo)

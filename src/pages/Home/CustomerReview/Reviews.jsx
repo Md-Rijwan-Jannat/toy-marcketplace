@@ -10,7 +10,7 @@ const Reviews = () => {
     }, [])
 
     useEffect(() => {
-        fetch('http://localhost:5000/customer')
+        fetch('https://toys-marketplace-server-agmt-11.vercel.app/customer')
             .then(res => res.json())
             .then(data => {
                 console.log(data)

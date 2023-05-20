@@ -13,7 +13,7 @@ const Categories = () => {
     console.log(categories);
 
     const categoryHandler = category => {
-        fetch(`http://localhost:5000/toys/${category}`)
+        fetch(`https://toys-marketplace-server-agmt-11.vercel.app/toys/${category}`)
             .then(res => res.json())
             .then(data => {
                 setCategory(data)
