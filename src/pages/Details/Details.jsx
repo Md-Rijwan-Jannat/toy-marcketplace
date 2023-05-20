@@ -12,7 +12,8 @@ const Details = () => {
     console.log(toyDetails);
     const { _id, photo, toyName, sellerName, category, price, rating, description, email } = toyDetails;
     return (
-        <div data-aos="fade-up-right" className='md:flex items-center gap-10 m-5 md:m-16 my-24 border rounded-2xl shadow-xl'>
+        <div data-aos="fade-right"
+        data-aos-duration="3000" className='md:flex items-center gap-10 m-5 md:m-16 my-24 border rounded-2xl shadow-xl'>
             <div className='md:w-1/2'>
                 <img className='w-full h-full rounded-2xl' src={photo} alt="" />
             </div>

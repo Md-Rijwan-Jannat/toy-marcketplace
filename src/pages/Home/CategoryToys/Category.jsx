@@ -12,7 +12,7 @@ const Category = ({ category }) => {
     const { _id, photo, price, rating, toyName, } = category
     return (
         <div data-aos="fade-up"
-            data-aos-duration="700" className='rounded-2xl border shadow-2xl bg-white'>
+            data-aos-duration="1000" className='rounded-2xl border shadow-2xl bg-white'>
             <img className='w-full h-[300px] rounded-t-xl border shadow-lg' src={photo} alt="" />
             <div className='p-5'>
                 <h2 className='text-2xl style my-5'>Toy Name: {toyName}</h2>

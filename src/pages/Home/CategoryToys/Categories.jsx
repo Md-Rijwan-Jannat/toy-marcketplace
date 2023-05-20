@@ -27,7 +27,7 @@ const Categories = () => {
     return (
         <div className='my-24 flex flex-col items-center bg-base-200 rounded-2xl py-24 shadow-xl'>
             <Tabs>
-                <TabList data-aos="fade-up"
+                <TabList data-aos="fade-right"
                     data-aos-duration="3000" className="md:flex w-full justify-center mb-10">
                     <Tab onClick={() => categoryHandler('new')} className="text-lg bg-purple-200 m-3 rounded-xl md:w-32 p-5">New cars</Tab>
                     <Tab onClick={() => categoryHandler('sports')} className="text-lg bg-purple-200 m-3 rounded-xl md:w-32 p-5">Sports cars</Tab>

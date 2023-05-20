@@ -1,10 +1,13 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider/AuthProvider';
 import { toast } from 'react-hot-toast';
 import Google from '../../shared/GoogleProvider/Google';
+import Aos from 'aos';
+import 'aos/dist/aos.css'
 
 const Login = () => {
+    useEffect(() => { Aos.init() }, [])
     const [show, setShow] = useState(false)
     const { loginUser } = useContext(AuthContext);
     const location = useLocation();
@@ -34,8 +37,10 @@ const Login = () => {
         <div className="hero my-16">
             <div className="hero-content flex-col justify-around lg:flex-row-reverse w-full">
                 <div className="flex flex-col justify-center items-center lg:text-left md:w-1/">
-                    <h2 className='text-4xl style text-secondary md:w-1/2'><span className='text-primary'>Login</span> our toy sports <span className='text-primary'>car site</span></h2>
-                    <img className='w-64' src="https://static.vecteezy.com/system/resources/previews/013/923/543/original/blue-car-logo-png.png" alt="" />
+                    <h2 data-aos="fade-right"
+                        data-aos-duration="3000" className='text-4xl style text-secondary md:w-1/2'><span className='text-primary'>Login</span> our toy sports <span className='text-primary'>car site</span></h2>
+                    <img data-aos="fade-down-left"
+                        data-aos-duration="3000" className='w-64' src="https://static.vecteezy.com/system/resources/previews/013/923/543/original/blue-car-logo-png.png" alt="" />
                 </div>
                 <form onSubmit={handleLogin} className="flex-shrink-0 md:w-1/2 max-w-sm bg-base-100">
                     <div className=" border rounded-lg p-8 shadow-xl">
