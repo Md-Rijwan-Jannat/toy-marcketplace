@@ -36,9 +36,7 @@ const AllToys = () => {
             </div>
 
             {
-                toys ? <div className="overflow-x-auto md:overflow-hidden w-full mt-5 mb-10">
-                    {
-                        user ? <table className="table w-full">
+                toys ? <div className="overflow-x-auto md:overflow-hidden w-full mt-5 mb-10"><table className="table w-full">
                             {/* head */}
                             <thead>
                                 <tr>
@@ -63,10 +61,7 @@ const AllToys = () => {
                                 ></Toy>)
                             }
 
-                        </table> : <div className='w-full h-[500px] flex items-center justify-center'>
-                            <progress className="progress w-56"></progress>
-                        </div>
-                    }
+                        </table>
                 </div> : <div className='w-full h-[500px] flex items-center justify-center'>
                     <progress className="progress w-56"></progress>
                 </div>

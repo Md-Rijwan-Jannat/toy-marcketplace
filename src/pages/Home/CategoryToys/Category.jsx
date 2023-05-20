@@ -1,10 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import Aos from 'aos';
 import 'aos/dist/aos.css'
+import { AuthContext } from '../../../Provider/AuthProvider/AuthProvider';
+import { toast } from 'react-hot-toast';
 
 const Category = ({ category }) => {
+    const {user} = useContext(AuthContext);
     useEffect(() => {
         Aos.init()
     }, [])
