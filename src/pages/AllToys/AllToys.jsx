@@ -22,7 +22,7 @@ const AllToys = () => {
     // search button add
 
     const [searchTerm, setSearchTerm] = useState('');
-    const [seMore, setSeeMore] = useState(10)
+    const [seMore, setSeeMore] = useState(20)
     const slice = toys.slice(0, seMore)
 
     const seeMoreHandle = () => {

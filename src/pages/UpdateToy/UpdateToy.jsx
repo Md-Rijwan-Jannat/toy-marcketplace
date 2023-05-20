@@ -54,10 +54,10 @@ const UpdateToy = () => {
             .catch(error => console.log(error));
     }
     return (
-        <div className='m-5'>
+        <div className='m-5 bg-neutral-focus bg-opacity-10 text-gray-500 rounded-3xl p-10'>
             <div data-aos="fade-up"
                 data-aos-duration="3000" className='flex flex-col justify-center items-center w-full my-10'>
-                <h2 className='text-3xl style'>Update a my Toys</h2>
+                <h2 className='text-3xl style text-primary'>Update a my Toys</h2>
                 <hr className='w-1/3' />
             </div>
             <form data-aos="fade-right"
@@ -66,23 +66,21 @@ const UpdateToy = () => {
                 <div className='md:flex items-center  gap-5 full'>
                     <div className='space-y-2 font-bold w-full md:w-1/2'>
                         <h3>Price</h3>
-                        <input type="number" required name='price' defaultValue={price} className="input input-bordered w-full" />
+                        <input type="number" required name='price' defaultValue={price} className="input input-bordered w-full text-gray-500" />
                     </div>
-                    <div className='space-y-2 font-bold w-full md:w-1/2'>
+                    <div className='space-y-2 font-bold   md:w-1/2'>
                         <h3>Quantity</h3>
-                        <input type="number" required name='quantity' defaultValue={quantity} className="input input-bordered w-full" />
+                        <input type="number" required name='quantity' defaultValue={quantity} className="input input-bordered w-full text-gray-500" />
                     </div>
                 </div>
                 {/* row 2 */}
-                <div className='md:flex items-center justify-center gap-5 full'>
+                <div className='md:flex items-center justify-center gap-5 mb-10'>
                     <div className='space-y-2 font-bold w-full md:w-1/2'>
                         <h3 className='text-center'>Description</h3>
-                        <textarea type="text" required name='description' defaultValue={description} className="textarea textarea-bordered w-full" />
+                        <textarea type="text" required name='description' defaultValue={description} className="textarea textarea-bordered w-full text-gray-500" />
                     </div>
                 </div>
-                <button className='btn btn-block style my-10'>Update A Toy</button>
-
-
+                <button className='btn btn-primary btn-block style'>Update A Toy</button>
             </form>
         </div>
     );

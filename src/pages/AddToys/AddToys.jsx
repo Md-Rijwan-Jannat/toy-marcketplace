@@ -40,10 +40,10 @@ const AddToys = () => {
             .catch(error => console.log(error));
     }
     return (
-        <div className='m-5'>
+        <div className='m-5 bg-neutral-focus bg-opacity-10 text-gray-500 rounded-3xl p-10'>
             <div data-aos="fade-up"
                 data-aos-duration="3000" className='flex flex-col justify-center items-center w-full my-10'>
-                <h2 className='text-3xl style'>Add a Toys</h2>
+                <h2 className='text-3xl style text-secondary-focus'>Add a Toys</h2>
                 <hr className='w-1/3' />
             </div>
             <form data-aos="fade-right"
@@ -101,7 +101,7 @@ const AddToys = () => {
                         <textarea type="text" required name='description' placeholder="description" className="textarea textarea-bordered w-full" />
                     </div>
                 </div>
-                <button className='btn btn-block style my-10'>Add A Toy</button>
+                <button className='btn btn-secondary btn-block style my-10'>Add A Toy</button>
 
 
             </form>
