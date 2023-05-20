@@ -4,7 +4,7 @@ import Toys from './Toys';
 import Aos from 'aos';
 import 'aos/dist/aos.css'
 
-const UserToys = () => {
+const MyToys = () => {
     useEffect(() => { Aos.init() }, [])
     const userToysForEmail = useLoaderData();
     return (
@@ -34,7 +34,7 @@ const UserToys = () => {
                         </tr>
                     </thead>
                     {
-                        userToysForEmail.map(toy => <Toys
+                        userToysForEmail?.map(toy => <Toys
                             key={toy._id}
                             toy={toy}
                         ></Toys>)
@@ -46,4 +46,4 @@ const UserToys = () => {
     );
 };
 
-export default UserToys;
+export default MyToys;

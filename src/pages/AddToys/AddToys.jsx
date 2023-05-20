@@ -1,12 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { toast } from 'react-hot-toast';
 import Aos from 'aos';
 import 'aos/dist/aos.css'
+import { AuthContext } from '../../Provider/AuthProvider/AuthProvider';
 
 const AddToys = () => {
     useEffect(() => {
         Aos.init()
     }, [])
+    const {user} = useContext(AuthContext);
     const addToyHandler = event => {
         event.preventDefault();
         const form = event.target;
@@ -63,7 +65,7 @@ const AddToys = () => {
                 <div className='md:flex items-center  gap-5 full'>
                     <div className='space-y-2 font-bold w-full md:w-1/2'>
                         <h3>Email</h3>
-                        <input type="email" required name='email' placeholder="Email" className="input input-bordered w-full" />
+                        <input type="email" required name='email' defaultValue={user?.email} className="input input-bordered w-full" />
                     </div>
                     <div className='space-y-2 font-bold w-full md:w-1/2'>
                         <h3>Category</h3>
