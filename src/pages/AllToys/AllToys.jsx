@@ -24,34 +24,34 @@ const AllToys = () => {
                 <h2 className='text-3xl style '>All Toys are Here {toys.length}</h2>
                 <hr className='w-1/3' />
             </div>
-            <div className="overflow-x-auto md:overflow-hidden w-full mt-5 mb-10">
-                <table className="table w-full">
-                    {/* head */}
-                    <thead>
-                        <tr>
-                            <th>
-                                <label>
-                                    <input type="checkbox" className="checkbox" />
-                                </label>
-                            </th>
-                            <th>Photo</th>
-                            <th>Toy Name</th>
-                            <th>Seller Name</th>
-                            <th>Category</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            <th>Details</th>
-                        </tr>
-                    </thead>
-                    {
-                        toys.map(toy => <Toy
-                            key={toy._id}
-                            toy={toy}
-                        ></Toy>)
-                    }
+                    <div className="overflow-x-auto md:overflow-hidden w-full mt-5 mb-10">
+                        <table className="table w-full">
+                            {/* head */}
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <label>
+                                            <input type="checkbox" className="checkbox" />
+                                        </label>
+                                    </th>
+                                    <th>Photo</th>
+                                    <th>Toy Name</th>
+                                    <th>Seller Name</th>
+                                    <th>Category</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Details</th>
+                                </tr>
+                            </thead>
+                            {
+                                toys.map(toy => <Toy
+                                    key={toy._id}
+                                    toy={toy}
+                                ></Toy>)
+                            }
 
-                </table>
-            </div>
+                        </table>
+                    </div>
         </div>
     );
 };

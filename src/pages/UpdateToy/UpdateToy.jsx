@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { toast } from 'react-hot-toast';
 import 'aos/dist/aos.css';
 import { useLoaderData } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const UpdateToy = () => {
     useEffect(() => {
@@ -10,7 +11,7 @@ const UpdateToy = () => {
     }, [])
 
     const toyData = useLoaderData();
-    const {_id, price, quantity, description } = toyData
+    const { _id, price, quantity, description } = toyData
     const updateToyHandler = event => {
         event.preventDefault();
         const form = event.target;
@@ -25,21 +26,22 @@ const UpdateToy = () => {
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
+            confirmButtonText: 'Yes, Update it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/toys/${_id}`, {
+                fetch(`http://localhost:5000/update-toy/${_id}`, {
                     method: "PATCH",
                     headers: { 'content-type': 'application/json' },
                     body: JSON.stringify(updatedToyInfo)
                 })
                     .then(res => res.json())
                     .then(data => {
+                        console.log(data);
                         console.log(updatedToyInfo);
-                        if (data) {
+                        if (data.modifiedCount > 0) {
                             Swal.fire(
-                                'Deleted!',
-                                'Your file has been deleted.',
+                                'Updated!',
+                                'Your toy has been updated.',
                                 'success'
                             )
 
@@ -64,7 +66,7 @@ const UpdateToy = () => {
                 <div className='md:flex items-center  gap-5 full'>
                     <div className='space-y-2 font-bold w-full md:w-1/2'>
                         <h3>Price</h3>
-                        <input type="number" required name='price'defaultValue={price} className="input input-bordered w-full" />
+                        <input type="number" required name='price' defaultValue={price} className="input input-bordered w-full" />
                     </div>
                     <div className='space-y-2 font-bold w-full md:w-1/2'>
                         <h3>Quantity</h3>

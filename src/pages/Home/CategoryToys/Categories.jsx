@@ -59,7 +59,9 @@ const Categories = () => {
                                     ></Category>)
                                 }
                             </div>
-                        ) : <progress className="progress w-56"></progress>
+                        ) :  <div className='h-[500px] flex items-center justify-center w-full'>
+                        <progress className="progress w-56"></progress>
+                    </div>
                     }
                 </TabPanel>
                 <TabPanel>

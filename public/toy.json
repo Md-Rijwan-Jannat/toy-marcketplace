@@ -1,0 +1,178 @@
+[
+    {
+        "toyName": "Hexa cars",
+        "sellerName": "Dhanish",
+        "email": "danish@gmail.com",
+        "category": "sports",
+        "price": "230",
+        "quantity": "340",
+        "rating": "4.5",
+        "photo": "https://images.unsplash.com/photo-1609708536965-6e5b915b195b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dG95JTIwY2FyfGVufDB8fDB8fHww&w=1000&q=80",
+        "description": "Toy cars can be made from different materials, including plastic, die-cast metal, wood, and even remote-control cars made of durable materials like metal alloys. Each material offers its own advantages and characteristics in terms of durability, detail, and functionality."
+    },
+    {
+        "toyName": "Tony cars",
+        "sellerName": "Dhanish",
+        "email": "danish@gmail.com",
+        "category": "new",
+        "price": "200",
+        "quantity": "323",
+        "rating": "4.7",
+        "photo": "https://media.centrepointstores.com/i/centrepoint/160985776-160985776-BSRG19150119_04-2100.jpg?fmt=auto&$quality-standard$&sm=c&$prodimg-m-sqr-pdp$",
+        "description": "Toy cars can be made from different materials, including plastic, die-cast metal, wood, and even remote-control cars made of durable materials like metal alloys."
+    },
+    {
+        "toyName": "Delax cars",
+        "sellerName": "Dhanish",
+        "email": "danish@gmail.com",
+        "category": "new",
+        "price": "200",
+        "quantity": "343",
+        "rating": "4.3",
+        "photo": "https://m.media-amazon.com/images/I/7115SB%2BuFwL.__AC_SY300_SX300_QL70_ML2_.jpg",
+        "description": "Toy cars can be made from different materials, including plastic, die-cast metal, wood, and even remote-control cars made of durable materials like metal alloys. Each material offers its own advantages and characteristics in terms of durability, detail, and functionality."
+    },
+    {
+        "toyName": "Rohana cars",
+        "sellerName": "Dhanish",
+        "email": "danish@gmail.com",
+        "category": "sports",
+        "price": "200",
+        "quantity": "343",
+        "rating": "4.9",
+        "photo": "https://media.centrepointstores.com/i/centrepoint/160985776-160985776-BSRG19150119_04-2100.jpg?fmt=auto&$quality-standard$&sm=c&$prodimg-m-sqr-pdp$",
+        "description": "Toy cars can be made from different materials, including plastic, die-cast metal, wood, and even remote-control cars made of durable materials like metal alloys. Each material offers its own advantages and characteristics in terms of durability, detail, and functionality."
+    },
+    {
+        "toyName": "Volax cars",
+        "sellerName": "Munna",
+        "email": "munna@gmail.com",
+        "category": "new",
+        "price": "290",
+        "quantity": "203",
+        "rating": "4.9",
+        "photo": "https://images.drive.com.au/driveau/image/upload/c_fill,f_auto,g_auto,h_416,q_auto:good,w_625/ca-s3/2011/03/Ferrari-FXX-Perth-3-625x416",
+        "description": "Toy cars can be made from different materials, including plastic, die-cast metal, wood, and even remote-control cars made of durable materials like metal alloys. Each material offers its own advantages and characteristics in terms of durability, detail, and functionality."
+    },
+    {
+        "toyName": "Roxsy cars",
+        "sellerName": "Munna",
+        "email": "munna@gmail.com",
+        "category": "new",
+        "price": "210",
+        "quantity": "340",
+        "rating": "4.2",
+        "photo": "https://i.pinimg.com/474x/10/b2/0a/10b20ae545a8d4f10c40601724550df8--ferrari-fxx-new-ferrari.jpg",
+        "description": "Toy cars can be made from different materials, including plastic, die-cast metal, wood, and even remote-control cars made of durable materials like metal alloys. Each material offers its own advantages and characteristics in terms of durability, detail, and functionality."
+    },
+    {
+        "toyName": "Silana cars",
+        "sellerName": "Munna",
+        "email": "munna@gmail.com",
+        "category": "new",
+        "price": "310",
+        "quantity": "1000",
+        "rating": "4.9",
+        "photo": "https://wallpapercave.com/wp/wp7395093.jpg",
+        "description": "Toy cars can be made from different materials, including plastic, die-cast metal, wood, and even remote-control cars made of durable materials like metal alloys. Each material offers its own advantages and characteristics in terms of durability, detail, and functionality."
+    },
+    {
+        "toyName": "Denis cars",
+        "sellerName": "Munna",
+        "email": "munna@gmail.com",
+        "category": "new",
+        "price": "390",
+        "quantity": "100",
+        "rating": "4.9",
+        "photo": "https://img.wallpapic.com/i3360-833-027/thumb/cars-lamborghini-supercar-gallardo-wallpaper.jpg",
+        "description": "Toy cars can be made from different materials, including plastic, die-cast metal, wood, and even remote-control cars made of durable materials like metal alloys. Each material offers its own advantages and characteristics in terms of durability, detail, and functionality."
+    },
+    {
+        "toyName": "Alphan cars",
+        "sellerName": "Munna",
+        "email": "munna@gmail.com",
+        "category": "new",
+        "price": "310",
+        "quantity": "1000",
+        "rating": "4.9",
+        "photo": "https://m.media-amazon.com/images/I/51c58lQtFqL._SX466_.jpg",
+        "description": "Toy cars can be made from different materials, including plastic, die-cast metal, wood, and even remote-control cars made of durable materials like metal alloys. Each material offers its own advantages and characteristics in terms of durability, detail, and functionality."
+    },
+    {
+        "toyName": "Hery cars",
+        "sellerName": "Munna",
+        "email": "munna@gmail.com",
+        "category": "Old",
+        "price": "300",
+        "quantity": "10",
+        "rating": "4.2",
+        "photo": "https://media.istockphoto.com/id/182176558/photo/teal-toy-car-on-white-background.jpg?s=612x612&w=0&k=20&c=hWCnoFIdjNokCDgvpm1Lw8x3FqEpxqGEBkqrKLVLx00=",
+        "description": "Toy cars can be made from different materials, including plastic, die-cast metal, wood, and even remote-control cars made of durable materials like metal alloys. Each material offers its own advantages and characteristics in terms of durability, detail, and functionality."
+    },
+    {
+        "toyName": "Lavy cars",
+        "sellerName": "Munna",
+        "email": "munna@gmail.com",
+        "category": "Old",
+        "price": "203",
+        "quantity": "12",
+        "rating": "4.9",
+        "photo": "https://i.etsystatic.com/23371643/r/il/5d5107/4626590224/il_300x300.4626590224_9xhu.jpg",
+        "description": "Toy cars can be made from different materials, including plastic, die-cast metal, wood, and even remote-control cars made of durable materials like metal alloys. Each material offers its own advantages and characteristics in terms of durability, detail, and functionality."
+    },
+    {
+        "toyName": "Ara cars",
+        "sellerName": "Munna",
+        "email": "munna@gmail.com",
+        "category": "Old",
+        "price": "310",
+        "quantity": "2",
+        "rating": "5",
+        "photo": "https://img.freepik.com/premium-photo/toy-car-blue-color_166347-1319.jpg?w=2000",
+        "description": "Toy cars can be made from different materials, including plastic, die-cast metal, wood, and even remote-control cars made of durable materials like metal alloys. Each material offers its own advantages and characteristics in terms of durability, detail, and functionality."
+    },
+    {
+        "toyName": "Mony cars",
+        "sellerName": "Munna",
+        "email": "munna@gmail.com",
+        "category": "Old",
+        "price": "100",
+        "quantity": "5",
+        "rating": "5",
+        "photo": "https://i.ebayimg.com/thumbs/images/g/aOQAAOSwzxliJ2VI/s-l300.jpg",
+        "description": "Toy cars can be made from different materials, including plastic, die-cast metal, wood, and even remote-control cars made of durable materials like metal alloys. Each material offers its own advantages and characteristics in terms of durability, detail, and functionality."
+    },
+    {
+        "toyName": "Mony cars",
+        "sellerName": "Munna",
+        "email": "munna@gmail.com",
+        "category": "Old",
+        "price": "100",
+        "quantity": "5",
+        "rating": "4.5",
+        "photo": "https://media.istockphoto.com/id/177002936/photo/yellow-car-model.jpg?s=612x612&w=is&k=20&c=NauYtlWW5YJYGbntdt_CoVl53SkDsV6PJzrD_QdM1x8=",
+        "description": "Toy cars can be made from different materials, including plastic, die-cast metal, wood, and even remote-control cars made of durable materials like metal alloys. Each material offers its own advantages and characteristics in terms of durability, detail, and functionality."
+    },
+    {
+        "toyName": "Dony cars",
+        "sellerName": "Munna",
+        "email": "munna@gmail.com",
+        "category": "sports",
+        "price": "150",
+        "quantity": "100",
+        "rating": "4.6",
+        "photo": "https://images-cdn.ubuy.co.in/633aad0dcb0629168c563ca3-toy-cars-sian-fkp3-metal-model-car-with.jpg",
+        "description": "Toy cars can be made from different materials, including plastic, die-cast metal, wood, and even remote-control cars made of durable materials like metal alloys. Each material offers its own advantages and characteristics in terms of durability, detail, and functionality."
+    },
+    {
+        "toyName": "Mony cars",
+        "sellerName": "Munna",
+        "email": "munna@gmail.com",
+        "category": "sports",
+        "price": "100",
+        "quantity": "5",
+        "rating": "4.5",
+        "photo": "https://m.media-amazon.com/images/I/61eqAgF2ezS._AC_UF894,1000_QL80_.jpg",
+        "description": "Toy cars can be made from different materials, including plastic, die-cast metal, wood, and even remote-control cars made of durable materials like metal alloys. Each material offers its own advantages and characteristics in terms of durability, detail, and functionality."
+    }
+]

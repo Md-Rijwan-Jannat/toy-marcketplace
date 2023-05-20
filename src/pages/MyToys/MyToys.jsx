@@ -20,9 +20,7 @@ const MyToys = () => {
                     <thead>
                         <tr>
                             <th>
-                                <label>
-                                    <th>Delete</th>
-                                </label>
+                                <th>Delete</th>
                             </th>
                             <th>Photo</th>
                             <th>Toy Name</th>

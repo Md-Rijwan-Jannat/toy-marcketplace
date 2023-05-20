@@ -56,7 +56,7 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
                 {
-                    user?.photoURL ? <img className='rounded-full' src={user?.photoURL} alt="" /> : <img className='rounded-full w-16 h-16' src="https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI=" alt="" />
+                    user? <img className='rounded-full w-16 h-16' src={user?.photoURL} alt="" /> :<img className='rounded-full w-16 h-16' src="https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI=" alt="" />
                 }
             </div>
         </div>
