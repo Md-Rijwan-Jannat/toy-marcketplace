@@ -8,7 +8,7 @@ import OurNextShop from '../OurNextShop/OurNextShop';
 
 const Home = () => {
     return (
-        <div>
+        <div className='m-0'>
             <Banner></Banner>
             <Gallery></Gallery>
             <Categories></Categories>
