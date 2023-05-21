@@ -3,6 +3,8 @@ import Toy from './Toy';
 import Aos from 'aos';
 import 'aos/dist/aos.css'
 import { AuthContext } from '../../Provider/AuthProvider/AuthProvider';
+import { FaArrowRight } from 'react-icons/fa';
+import Gallery from '../../shared/Gallery/Gallery';
 
 const AllToys = () => {
     const { user } = useContext(AuthContext)
@@ -29,7 +31,8 @@ const AllToys = () => {
         setSeeMore(seMore + seMore)
     }
     return (
-        <div>
+        <div className='mt-16'>
+            <Gallery></Gallery>
             <div data-aos="fade-up"
                 data-aos-duration="3000" className='flex flex-col items-center my-10 text-primary'>
                 <h2 className='text-3xl style '>All Toys are Here {toys.length}</h2>
@@ -74,7 +77,7 @@ const AllToys = () => {
             }
 
             <div className='flex items-center justify-center my-16 style'>
-                <button onClick={() => seeMoreHandle()} className='btn w-1/2'>See More</button>
+                <button onClick={() => seeMoreHandle()} className='btn btn-primary w-1/2'>See More <FaArrowRight className='ml-5'></FaArrowRight></button>
             </div>
         </div>
     );

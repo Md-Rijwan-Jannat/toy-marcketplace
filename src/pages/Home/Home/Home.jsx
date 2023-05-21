@@ -1,10 +1,10 @@
 import React from 'react';
 import Banner from '../Banner/Banner';
-import Gallery from '../Gallery/Gallery';
-import Reviews from '../CustomerReview/Reviews';
 import Slider from 'react-slick';
 import Categories from '../CategoryToys/Categories';
 import OurNextShop from '../OurNextShop/OurNextShop';
+import Gallery from '../../../shared/Gallery/Gallery';
+import Reviews from '../../../shared/CustomerReview/Reviews';
 
 const Home = () => {
     return (

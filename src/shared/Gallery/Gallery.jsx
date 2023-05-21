@@ -1,35 +1,30 @@
-import React, { useEffect } from 'react';
-import '../Gallery/Gallery.css'
+import React, { useEffect, useState } from 'react';
+import './Gallery.css'
 import Aos from 'aos';
 import 'aos/dist/aos.css'
+import { FaDelicious, FaUsers } from 'react-icons/fa';
 
 const Gallery = () => {
     useEffect(() => {
         Aos.init();
     }, [])
-    const
-        photos = [
-
-            'https://example.com/photo1.jpg'
-            ,
-
-            'https://example.com/photo2.jpg'
-            ,
-
-            // Add more photo URLs here
-
-        ];
+    const [toys, setToys] = useState([])
+    useEffect(() => {
+        fetch('https://toys-marketplace-server-agmt-11.vercel.app/toys')
+            .then(res => res.json())
+            .then(data => setToys(data))
+    }, [])
     return (
         <div >
             <div data-aos="fade-up"
                 data-aos-duration="3000" className='flex flex-col justify-center items-center w-full mb-16'>
-                <h2 className='text-3xl style'>Cars Gallery</h2>
+                <h2 className='text-3xl text-blue-600 style flex flex-col items-center'><span>Cars GallerY </span><FaDelicious className='ml-3 my-5 text-yellow-500 text-6xl'></FaDelicious></h2>
                 <hr className='w-1/3' />
             </div>
             <div className='body' data-aos="fade-right"
                 data-aos-offset="300"
                 data-aos-easing="ease-in-sine">
-                <section className="swiper mySwiper overflow-x-scroll ">
+                <section className="swiper mySwiper overflow-x-scroll overflow-hidden">
                     <div className="swiper-wrapper">
                         <div className="card swiper-slide shadow-2xl">
                             <div className="card-image">
@@ -72,15 +67,17 @@ const Gallery = () => {
                                 <span className='text-xl font-bold pb-5'> Rovar cars</span>
                             </div>
                         </div>
-                        <div className="card swiper-slide shadow-2xl">
-                            <div className="card-image">
+                        {
+                            toys.map(toy => <div className="card swiper-slide shadow-2xl">
+                                <div className="card-image">
 
-                                <img src="https://cdn11.bigcommerce.com/s-rejby4tfjq/images/stencil/1000x667/products/1992/7782/73346-MMT-YELLOW-L-Lamborghini-Gallardo-Superleggera-Diecast-Model-Toy-Car-det__70725.1591917007.jpg?c=1" alt="" />
-                            </div>
-                            <div className="card-content">
-                                <span className='text-xl font-bold pb-5'> Track cars</span>
-                            </div>
-                        </div>
+                                    <img src={ toy.photo} alt="" />
+                                </div>
+                                <div className="card-content">
+                                    <span className='text-xl font-bold pb-5'> {toy.toyName}</span>
+                                </div>
+                            </div>)
+                        }
 
 
                     </div>

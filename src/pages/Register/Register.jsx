@@ -7,7 +7,7 @@ import Aos from 'aos';
 import 'aos/dist/aos.css'
 
 const Register = () => {
-    useEffect(()=>{Aos.init()},[])
+    useEffect(()=>{Aos.init()},[]);
     const [show, setShow] = useState(false)
     const { registerUser } = useContext(AuthContext);
 
@@ -34,12 +34,12 @@ const Register = () => {
     }
     return (
         <div className="w-full flex flex-col items-center mb-24 lg:flex-row-reverse my-24">
-            <div className="flex justify-center items-center md:w-1/2">
+            <div className="flex m-5 justify-center items-center md:w-1/2">
                 <img data-aos="fade-down-right"
                     data-aos-duration="3000" className='w-full md:w-[25em]' src="https://thumbs.dreamstime.com/b/funny-blue-colored-cartoon-car-amazing-eyes-119136148.jpg" alt="" />
             </div>
-            <form onSubmit={handleRegister} className="md:w-1/2">
-                <div className="card-body border rounded-lg shadow-xl">
+            <form onSubmit={handleRegister} className="w-full mx-5 md:w-1/2">
+                <div className="w-full p-5 md:p-10 border rounded-lg shadow-xl">
                     <h2 className='text-2xl font-bold mb-5 text-primary'>Register Please</h2>
                     <div className="form-control">
                         <label className="label">

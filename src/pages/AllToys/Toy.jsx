@@ -23,7 +23,7 @@ const Toy = ({ toy }) => {
                         <img className='rounded-xl' src={photo} alt="Avatar Tailwind CSS Component" />
                     </div>
                 </td>
-                <td className='font-bold'>
+                <td className='font-bold w-[300px] h-full'>
                     {toyName}
                 </td>
                 <td>{sellerName}</td>

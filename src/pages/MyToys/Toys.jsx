@@ -5,11 +5,44 @@ import Aos from 'aos';
 import 'aos/dist/aos.css'
 import { Link } from 'react-router-dom';
 
-const Toys = ({ toy, handleDelete }) => {
+const Toys = ({ toy }) => {
     useEffect(() => { Aos.init() }, [])
     const { _id, toyName, sellerName, email, price, quantity, photo } = toy;
 
 
+    const handleDelete = (_id) => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`https://toys-marketplace-server-agmt-11.vercel.app/toys/${_id}`, {
+                    method: "DELETE"
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        console.log(updatedToyInfo);
+                        if (data.deletedCount > 0) {
+                            Swal.fire(
+                                'Deleted!',
+                                'Your toy has been deleted!.',
+                                'success'
+                            )
+
+                        }
+                    })
+
+                    .catch(error => console.log(error))
+            }
+        })
+            .catch(error => console.log(error));
+    }
     return (
         <tbody data-aos="fade-up" className='border-b'>
             {/* row 1 */}

@@ -4,6 +4,7 @@ import Toys from './Toys';
 import Aos from 'aos';
 import 'aos/dist/aos.css'
 import { AuthContext } from '../../Provider/AuthProvider/AuthProvider';
+import Gallery from '../../shared/Gallery/Gallery';
 
 const MyToys = () => {
     const { user } = useContext(AuthContext)
@@ -11,41 +12,10 @@ const MyToys = () => {
     const userToysForEmail = useLoaderData();
 
     // delete
-    const handleDelete = (_id) => {
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                fetch(`https://toys-marketplace-server-agmt-11.vercel.app/toys/${_id}`, {
-                    method: "DELETE"
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        console.log(data);
-                        console.log(updatedToyInfo);
-                        if (data.deletedCount > 0) {
-                            Swal.fire(
-                                'Deleted!',
-                                'Your toy has been deleted!.',
-                                'success'
-                            )
-
-                        }
-                    })
-
-                    .catch(error => console.log(error))
-            }
-        })
-            .catch(error => console.log(error));
-    }
+    
     return (
-        <div>
+        <div className='mt-16'>
+            <Gallery></Gallery>
             <div data-aos="fade-up"
                 data-aos-duration="3000" className='flex flex-col items-center my-10 text-primary'>
                 <h2 className='text-3xl style '>My all Toys {userToysForEmail.length}</h2>
@@ -74,7 +44,6 @@ const MyToys = () => {
                                 userToysForEmail?.map(toy => <Toys
                                     key={toy._id}
                                     toy={toy}
-                                    handleDelete={handleDelete}
                                 ></Toys>)
                             }
 
