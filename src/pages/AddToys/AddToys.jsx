@@ -3,6 +3,7 @@ import { toast } from 'react-hot-toast';
 import Aos from 'aos';
 import 'aos/dist/aos.css'
 import { AuthContext } from '../../Provider/AuthProvider/AuthProvider';
+import { Helmet } from 'react-helmet';
 
 const AddToys = () => {
     useEffect(() => {
@@ -41,6 +42,9 @@ const AddToys = () => {
     }
     return (
         <div className='m-5 bg-neutral-focus bg-opacity-10 text-gray-500 rounded-3xl p-10'>
+            <Helmet>
+                <title>Add your toy</title>
+            </Helmet>
             <div data-aos="fade-up"
                 data-aos-duration="3000" className='flex flex-col justify-center items-center w-full my-10'>
                 <h2 className='text-3xl style text-secondary-focus'>Add a Toys</h2>

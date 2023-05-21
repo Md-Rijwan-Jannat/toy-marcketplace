@@ -4,6 +4,7 @@ import { toast } from 'react-hot-toast';
 import 'aos/dist/aos.css';
 import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet';
 
 const UpdateToy = () => {
     useEffect(() => {
@@ -55,6 +56,7 @@ const UpdateToy = () => {
     }
     return (
         <div className='m-5 bg-neutral-focus bg-opacity-10 text-gray-500 rounded-3xl p-10'>
+            <Helmet><title>Update toy</title></Helmet>
             <div data-aos="fade-up"
                 data-aos-duration="3000" className='flex flex-col justify-center items-center w-full my-10'>
                 <h2 className='text-3xl style text-primary'>Update a my Toys</h2>

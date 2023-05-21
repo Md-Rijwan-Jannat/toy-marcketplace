@@ -5,6 +5,7 @@ import Aos from 'aos';
 import 'aos/dist/aos.css'
 import { AuthContext } from '../../Provider/AuthProvider/AuthProvider';
 import Gallery from '../../shared/Gallery/Gallery';
+import { Helmet } from 'react-helmet';
 
 const MyToys = () => {
     const { user } = useContext(AuthContext)
@@ -15,9 +16,10 @@ const MyToys = () => {
     
     return (
         <div className='mt-16'>
+            <Helmet><title>My toys</title></Helmet>
             <Gallery></Gallery>
             <div data-aos="fade-up"
-                data-aos-duration="3000" className='flex flex-col items-center my-10 text-primary'>
+                data-aos-duration="3000" className='flex flex-col items-center my-16 text-primary'>
                 <h2 className='text-3xl style '>My all Toys {userToysForEmail.length}</h2>
                 <hr className='w-1/3' />
             </div>

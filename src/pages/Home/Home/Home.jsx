@@ -6,6 +6,7 @@ import OurNextShop from '../OurNextShop/OurNextShop';
 import Gallery from '../../../shared/Gallery/Gallery';
 import Reviews from '../../../shared/CustomerReview/Reviews';
 
+
 const Home = () => {
     return (
         <div className='m-0'>

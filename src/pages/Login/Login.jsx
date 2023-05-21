@@ -5,6 +5,7 @@ import { toast } from 'react-hot-toast';
 import Google from '../../shared/GoogleProvider/Google';
 import Aos from 'aos';
 import 'aos/dist/aos.css'
+import { Helmet } from 'react-helmet';
 
 const Login = () => {
     useEffect(() => { Aos.init() }, [])
@@ -35,6 +36,7 @@ const Login = () => {
     }
     return (
         <div className="hero my-16">
+            <Helmet>Login page</Helmet>
             <div className="hero-content flex-col justify-around lg:flex-row-reverse w-full">
                 <div className="flex flex-col justify-center items-center lg:text-left md:w-1/">
                     <h2 data-aos="fade-right"

@@ -5,6 +5,7 @@ import 'aos/dist/aos.css'
 import { AuthContext } from '../../Provider/AuthProvider/AuthProvider';
 import { FaArrowRight } from 'react-icons/fa';
 import Gallery from '../../shared/Gallery/Gallery';
+import { Helmet } from 'react-helmet';
 
 const AllToys = () => {
     const { user } = useContext(AuthContext)
@@ -32,9 +33,10 @@ const AllToys = () => {
     }
     return (
         <div className='mt-16'>
+            <Helmet><title>All toys is here</title></Helmet>
             <Gallery></Gallery>
             <div data-aos="fade-up"
-                data-aos-duration="3000" className='flex flex-col items-center my-10 text-primary'>
+                data-aos-duration="3000" className='flex flex-col items-center my-16 text-primary'>
                 <h2 className='text-3xl style '>All Toys are Here {toys.length}</h2>
                 <hr className='w-1/3' />
             </div>

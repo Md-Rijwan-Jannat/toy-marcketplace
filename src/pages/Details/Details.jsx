@@ -4,6 +4,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 import Aos from 'aos';
 import 'aos/dist/aos.css'
 import Reviews from '../../shared/CustomerReview/Reviews';
+import { Helmet } from 'react-helmet';
 
 const Details = () => {
     useEffect(() => {
@@ -14,6 +15,7 @@ const Details = () => {
     const { _id, photo, toyName, sellerName, quantity, category, price, rating, description, email } = toyDetails;
     return (
         <div>
+            <Helmet><title>Toys details</title></Helmet>
             <div data-aos="fade-right"
                 data-aos-duration="3000" className='grid grid-cols-1 items-center m-5 md:m-16 my-24 border rounded-2xl shadow-xl md:flex-row-reverse'>
                 <div className='md:w-full'>
