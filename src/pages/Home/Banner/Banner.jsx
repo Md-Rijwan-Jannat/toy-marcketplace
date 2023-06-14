@@ -10,7 +10,7 @@ const Banner = () => {
                     <h2 className='text-secondary'>
                         <span className='text-primary mb-2'>Welcome to our</span> toy sports cars site
                     </h2>
-                    <Link to={'/addToy'} className='btn md:w-[300px] text-white my-12 style'>add a toy</Link>
+                    <Link to={'/addToy'} className='btn md:w-[300px] text-white my-[90px] style'>add a toy</Link>
                 </div>
             </div>
             <div className="carousel h-[80px] w-[150px] md:h-1/3 md:w-1/3 absolute top-1/3 right-1 md:left-1/2 md:top-5">
