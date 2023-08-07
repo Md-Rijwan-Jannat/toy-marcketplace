@@ -1,16 +1,18 @@
-import React, { useContext, useEffect } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import  { useContext, useEffect } from 'react';
 import Toys from './Toys';
 import Aos from 'aos';
 import 'aos/dist/aos.css'
 import { AuthContext } from '../../Provider/AuthProvider/AuthProvider';
 import Gallery from '../../shared/Gallery/Gallery';
 import { Helmet } from 'react-helmet';
+import useMyToys from '../../components/hooks/useMyToys';
 
 const MyToys = () => {
     const { user } = useContext(AuthContext)
     useEffect(() => { Aos.init() }, [])
-    const userToysForEmail = useLoaderData();
+    
+    const [myToys, refetch] = useMyToys();
+    console.log(myToys);
 
     // delete
     
@@ -20,11 +22,11 @@ const MyToys = () => {
             <Gallery></Gallery>
             <div data-aos="fade-up"
                 data-aos-duration="3000" className='flex flex-col items-center my-16 text-primary'>
-                <h2 className='text-3xl style '>My all Toys {userToysForEmail.length}</h2>
+                <h2 className='text-3xl style '>My all Toys {myToys.length}</h2>
                 <hr className='w-1/3' />
             </div>
             {
-                userToysForEmail ? <div className="overflow-x-auto md:overflow-hidden  w-full mt-5 mb-10">
+                myToys ? <div className="overflow-x-auto md:overflow-hidden  w-full mt-5 mb-10">
                     {
                         user ? <table className="table w-full">
                             {/* head */}
@@ -43,9 +45,10 @@ const MyToys = () => {
                                 </tr>
                             </thead>
                             {
-                                userToysForEmail?.map(toy => <Toys
+                                myToys?.map(toy => <Toys
                                     key={toy._id}
                                     toy={toy}
+                                    refetch={refetch}
                                 ></Toys>)
                             }
 

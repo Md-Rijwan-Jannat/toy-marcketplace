@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider/AuthProvider';
 import { toast } from 'react-hot-toast';
@@ -17,18 +17,18 @@ const Navbar = () => {
             })
     }
     const routes = <>
-        <li><Link className='font-semibold' to={'/'}>Home</Link></li>
-        <li><Link className='font-semibold' to={'/allToys'}>All Toys</Link></li>
+        <li><Link className='font-semibold rounded px-4 py-1 border-yellow-400 mx-5 text-purple-500 ' to={'/'}>Home</Link></li>
+        <li><Link className='font-semibold rounded px-4 py-1 border-yellow-400 mx-5 text-purple-500 ' to={'/allToys'}>All Toys</Link></li>
         {
             user ? <>
-                <li><Link className='font-semibold' to={`/myToys/${user?.email}`}>My Toys</Link></li>
-                <li><Link className='font-semibold' to={'/addToy'}>Add A Toy</Link></li>
-                <li><Link className='font-semibold' onClick={logOutHandler} >Logout</Link></li>
+                <li><Link className='font-semibold rounded px-4 py-1 border-yellow-400 mx-5 text-purple-500 ' to={`/myToys/${user?.email}`}>My Toys</Link></li>
+                <li><Link className='font-semibold rounded px-4 py-1 border-yellow-400 mx-5 text-purple-500 ' to={'/addToy'}>Add A Toy</Link></li>
+                <li><Link className='font-semibold rounded px-4 py-1 border-yellow-400 mx-5 text-purple-500 ' onClick={logOutHandler} >Logout</Link></li>
             </> :
-                <li><Link className='font-semibold' to={'/login'}>Login</Link></li>
+                <li><Link className='font-semibold rounded px-4 py-1 border-yellow-400 mx-5 text-purple-500 ' to={'/login'}>Login</Link></li>
         }
 
-        <li><Link className='font-semibold' to={'/blogs'}>Blogs</Link></li>
+        <li><Link className='font-semibold rounded px-4 py-1 border-yellow-400 mx-5 text-purple-500 ' to={'/blogs'}>Blogs</Link></li>
 
     </>
     return (

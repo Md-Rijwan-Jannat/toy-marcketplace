@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import Category from './Category';
@@ -9,37 +9,34 @@ const Categories = () => {
     useEffect(() => {
         Aos.init();
     }, [])
-    const [categories, setCategory] = useState(null)
-    console.log(categories);
-
-    const categoryHandler = category => {
-        fetch(`https://toys-marketplace-server-agmt-11.vercel.app/toys/${category}`)
-            .then(res => res.json())
-            .then(data => {
-                setCategory(data)
-            })
-            .catch(error => console.log(error))
-    }
+    const [toys, setToys] = useState([]);
     useEffect(() => {
-        categoryHandler('new')
+        fetch('http://localhost:5000/toys')
+            .then(res => res.json())
+            .then(data => setToys(data))
     }, [])
 
+    const newCar = toys.filter(item => item.category == 'new')
+    const sportsCar = toys.filter(item => item.category == 'sports')
+    const oldCar = toys.filter(item => item.category == 'Old')
+
+
     return (
-        <div className='my-24 flex flex-col items-center bg-base-200 rounded-2xl py-24 shadow-xl'>
+        <div className='my-24 flex flex-col items-center  rounded-2xl py-24 shadow-md'>
             <Tabs>
                 <TabList data-aos="fade-right"
                     data-aos-duration="3000" className="md:flex w-full justify-center mb-10">
-                    <Tab onClick={() => categoryHandler('new')} className="text-lg bg-purple-200 m-3 rounded-xl md:w-32 p-5">New cars</Tab>
-                    <Tab onClick={() => categoryHandler('sports')} className="text-lg bg-purple-200 m-3 rounded-xl md:w-32 p-5">Sports cars</Tab>
-                    <Tab onClick={() => categoryHandler('Old')} className="text-lg bg-purple-200 m-3 rounded-xl md:w-32 p-5">Old cars</Tab>
+                    <Tab className="text-lg bg-purple-200 aria-selected:bg-purple-300 aria-selected:border-2 aria-selected:border-purple-500 m-3 rounded-md md:w-32 px-4 py-2 text-center">New cars</Tab>
+                    <Tab className="text-lg bg-purple-200 aria-selected:bg-purple-300 aria-selected:border-2 aria-selected:border-purple-500 m-3 rounded-md md:w-32 px-4 py-2 text-center">Sports cars</Tab>
+                    <Tab className="text-lg bg-purple-200 aria-selected:bg-purple-300 aria-selected:border-2 aria-selected:border-purple-500 m-3 rounded-md md:w-32 px-4 py-2 text-center">Old cars</Tab>
                 </TabList>
 
                 <TabPanel>
                     {
-                        categories ? (
+                        newCar ? (
                             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-5 md:p-10'>
                                 {
-                                    categories.map(category => <Category
+                                    newCar.map(category => <Category
                                         key={category._id}
                                         category={category}
                                     ></Category>)
@@ -52,10 +49,10 @@ const Categories = () => {
                 </TabPanel>
                 <TabPanel>
                     {
-                        categories ? (
+                        sportsCar ? (
                             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-5 md:p-10'>
                                 {
-                                    categories.map(category => <Category
+                                    sportsCar.map(category => <Category
                                         key={category._id}
                                         category={category}
                                     ></Category>)
@@ -68,10 +65,10 @@ const Categories = () => {
                 </TabPanel>
                 <TabPanel>
                     {
-                        categories ? (
+                        oldCar ? (
                             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-5 md:p-10'>
                                 {
-                                    categories.map(category => <Category
+                                    oldCar.map(category => <Category
                                         key={category._id}
                                         category={category}
                                     ></Category>)
@@ -88,3 +85,4 @@ const Categories = () => {
 };
 
 export default Categories;
+

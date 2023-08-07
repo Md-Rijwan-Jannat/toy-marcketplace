@@ -1,22 +1,18 @@
-import React, { useContext, useEffect } from 'react';
+import { useEffect } from 'react';
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import Aos from 'aos';
 import 'aos/dist/aos.css'
-import { AuthContext } from '../../../Provider/AuthProvider/AuthProvider';
-import { toast } from 'react-hot-toast';
 
 const Category = ({ category }) => {
-    const {user} = useContext(AuthContext);
     useEffect(() => {
         Aos.init()
     }, [])
-    console.log(category)
     const { _id, photo, price, rating, toyName, } = category
     return (
         <div data-aos="fade-up"
-            data-aos-duration="1000" className='relative rounded-2xl border shadow-2xl bg-white'>
-            <img className='w-full h-[300px] md:h-[300px] rounded-t-xl border shadow-lg' src={photo} alt="" />
+            data-aos-duration="1000" className='relative rounded-2xl border shadow-sm bg-white'>
+            <img className='w-full h-[240px] lg:h-[220px] xl:h-[300px] md:h-[300px] rounded-t-xl hover:border hover:shadow-xl' src={photo} alt="" />
             <div className='p-5'>
                 <h2 className='text-2xl style my-5'>Toy Name: {toyName}</h2>
                 <p className='text-lg mb-3'>Price: <span className='text-orange-500'>${price}</span></p>

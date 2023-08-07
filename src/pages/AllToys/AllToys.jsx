@@ -1,14 +1,12 @@
-import React, { useContext, useEffect, useState } from 'react';
+import {  useEffect, useState } from 'react';
 import Toy from './Toy';
 import Aos from 'aos';
 import 'aos/dist/aos.css'
-import { AuthContext } from '../../Provider/AuthProvider/AuthProvider';
 import { FaArrowRight } from 'react-icons/fa';
 import Gallery from '../../shared/Gallery/Gallery';
 import { Helmet } from 'react-helmet';
 
 const AllToys = () => {
-    const { user } = useContext(AuthContext)
     useEffect(() => {
         Aos.init();
     }, [])
@@ -24,9 +22,7 @@ const AllToys = () => {
     }, [])
     // search button add
 
-    const [searchTerm, setSearchTerm] = useState('');
-    const [seMore, setSeeMore] = useState(20)
-    const slice = toys.slice(0, seMore)
+    const [seMore, setSeeMore] = useState(15)
 
     const seeMoreHandle = () => {
         setSeeMore(seMore + seMore)
@@ -41,9 +37,9 @@ const AllToys = () => {
                 <hr className='w-1/3' />
             </div>
             {/* search */}
-            <div className='flex flex-col space-y-5 items-center rounded-none my-24'>
-                <input type="search" required name='search' placeholder='search' onChange={(e) => setSearchTerm(e.target.value)} className="input input-bordered w-1/3" />
-                <button className='btn'>Search</button>
+            <div className='md:relative flex  items-center justify-center rounded-none my-24'>
+                <input type="search" required name='search' placeholder='search' className="input input-bordered w-1/3" />
+                <button className= 'md:absolute md:right-[250px] lg:right-80 xl:right-[400px] bg-slate-900 px-2 py-3 rounded-md text-white  hover:bg-slate-800'>Search</button>
             </div>
 
             {
@@ -66,7 +62,7 @@ const AllToys = () => {
                         </tr>
                     </thead>
                     {
-                        slice?.filter((toy) => toy.toyName.toLowerCase().includes(searchTerm)).map(toy => <Toy
+                        toys.map(toy => <Toy
                             key={toy._id}
                             toy={toy}
                         ></Toy>)

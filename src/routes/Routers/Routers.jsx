@@ -1,6 +1,5 @@
 import {
-  createBrowserRouter,
-  RouterProvider,
+  createBrowserRouter
 } from "react-router-dom";
 import Main from "../../layout/Main";
 import Home from "../../pages/Home/Home/Home";
@@ -53,7 +52,6 @@ const router = createBrowserRouter([
       {
         path: '/myToys/:email',
         element: <PrivateRouter><MyToys></MyToys></PrivateRouter>,
-        loader: ({ params }) => fetch(`https://toys-marketplace-server-agmt-11.vercel.app/my-toys/${params.email}`)
       },
       {
         path: '/updateToy/:id',

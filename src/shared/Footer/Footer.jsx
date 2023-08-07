@@ -1,10 +1,10 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
 import { FaRegCopyright } from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <footer className="footer p-10 bg-base-200 text-base-content rounded-t-lg border">
+        <footer className="footer p-10 bg-yellow-50 text-base-content rounded-t-[50px] mt-10 border">
             <div>
             <img className='w-[150px] h-[100px] rounded-3xl' src="https://i.pinimg.com/736x/64/6b/f2/646bf2610a7883197908aeb33d1ad783.jpg" alt="" />
                 <p className='text-ld font-semibold'>The Evolution of the Toy <br /> Industry From Playful Entertainment <br /> to Educational Enrichment</p>

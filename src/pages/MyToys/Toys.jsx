@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { FaTimes } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import Aos from 'aos';
 import 'aos/dist/aos.css'
 import { Link } from 'react-router-dom';
 
-const Toys = ({ toy }) => {
+const Toys = ({ toy,refetch }) => {
     useEffect(() => { Aos.init() }, [])
     const { _id, toyName, sellerName, email, price, quantity, photo } = toy;
 
@@ -27,8 +27,8 @@ const Toys = ({ toy }) => {
                     .then(res => res.json())
                     .then(data => {
                         console.log(data);
-                        console.log(updatedToyInfo);
                         if (data.deletedCount > 0) {
+                            refetch();
                             Swal.fire(
                                 'Deleted!',
                                 'Your toy has been deleted!.',

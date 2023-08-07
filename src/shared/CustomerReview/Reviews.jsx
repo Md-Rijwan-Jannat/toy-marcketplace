@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Aos from 'aos';
 import 'aos/dist/aos.css'
 import { FaStar, FaUsers } from 'react-icons/fa';
@@ -13,13 +13,12 @@ const Reviews = () => {
         fetch('https://toys-marketplace-server-agmt-11.vercel.app/customer')
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 setReviews(data);
             })
     }, [])
     return (
         <div data-aos="fade-up"
-            data-aos-duration="2000" className='my-16 flex flex-col items-center m-5 bg-base-200 rounded-xl shadow-2xl py-16 px-5'>
+            data-aos-duration="2000" className='my-16 flex flex-col items-center m-5  rounded-xl shadow-sm py-16 px-5'>
             <div data-aos="fade-up"
                 data-aos-duration="3000" className='flex flex-col justify-center items-center w-full mb-16'>
                 <h2 className='text-3xl text-primary style flex flex-col items-center'><span>Customer ReviewS </span><FaUsers className='ml-3 my-5 text-5xl'></FaUsers></h2>
@@ -28,7 +27,7 @@ const Reviews = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 mt-10">
                 {reviews.map((review) => (
                     <div data-aos="fade-up"
-                        data-aos-duration="1000" key={review._id} className="w-full bg-white shadow-md rounded-lg p-4" >
+                        data-aos-duration="1000" key={review._id} className="w-full bg-white shadow-md rounded-lg p-4 border hover:bg-yellow-50" >
                         <div className='absolute -top-10 right-1/3'>
                             <img className='w-28 h-28 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2' src={review.img} alt="" />
                         </div>
