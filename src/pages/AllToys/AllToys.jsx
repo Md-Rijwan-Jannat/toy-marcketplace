@@ -1,4 +1,4 @@
-import {  useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Toy from './Toy';
 import Aos from 'aos';
 import 'aos/dist/aos.css'
@@ -11,25 +11,13 @@ const AllToys = () => {
     useEffect(() => {
         Aos.init();
     }, [])
-    // const [toys, setToys] = useState([])
-    // useEffect(() => {
-    //     fetch(`https://toys-marketplace-server-agmt-11.vercel.app/toys`)
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             console.log(data)
-    //             setToys(data);
-    //         })
-    //         .catch()
-    // }, [])
-    // search button add
 
     const [toys, , isLoading] = useToys();
+    const [visibleToys, setVisibleToys] = useState(15); // Number of toys to initially display
 
-    const [seMore, setSeeMore] = useState(15)
-
-    const seeMoreHandle = () => {
-        setSeeMore(seMore + seMore)
-    }
+    const loadMoreToys = () => {
+        setVisibleToys(prevVisibleToys => prevVisibleToys + 15);
+    };
     return (
         <div className='mt-16'>
             <Helmet><title>All toys is here</title></Helmet>
@@ -42,7 +30,7 @@ const AllToys = () => {
             {/* search */}
             <div className='md:relative flex  items-center justify-center rounded-none my-24'>
                 <input type="search" required name='search' placeholder='search' className="input input-bordered w-1/3" />
-                <button className= 'md:absolute md:right-[250px] lg:right-80 xl:right-[400px] bg-slate-900 px-2 py-3 rounded-md text-white  hover:bg-slate-800'>Search</button>
+                <button className='md:absolute md:right-[250px] lg:right-80 xl:right-[400px] bg-slate-900 px-2 py-3 rounded-md text-white  hover:bg-slate-800'>Search</button>
             </div>
 
             {
@@ -65,20 +53,24 @@ const AllToys = () => {
                         </tr>
                     </thead>
                     {
-                        toys.map(toy => <Toy
-                            key={toy._id}
-                            toy={toy}
-                        ></Toy>)
+                        toys.slice(0, visibleToys).map(toy => (
+                            <Toy
+                                key={toy._id}
+                                toy={toy}
+                            />
+                        ))
                     }
 
                 </table>
                 </div> : <div className='w-full h-[500px] flex items-center text-black justify-center'>
-                <span className="loading loading-dots loading-md"></span>
+                    <span className="loading loading-dots loading-md"></span>
                 </div>
             }
 
             <div className='flex items-center justify-center my-16 style'>
-                <button onClick={() => seeMoreHandle()} className='btn btn-primary w-1/2'>See More <FaArrowRight className='ml-5'></FaArrowRight></button>
+                <button className='btn btn-primary w-1/2' onClick={loadMoreToys}>
+                    See More <FaArrowRight className='ml-5'></FaArrowRight>
+                </button>
             </div>
         </div>
     );
