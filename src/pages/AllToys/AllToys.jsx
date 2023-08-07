@@ -5,22 +5,25 @@ import 'aos/dist/aos.css'
 import { FaArrowRight } from 'react-icons/fa';
 import Gallery from '../../shared/Gallery/Gallery';
 import { Helmet } from 'react-helmet';
+import useToys from '../../components/hooks/useToys';
 
 const AllToys = () => {
     useEffect(() => {
         Aos.init();
     }, [])
-    const [toys, setToys] = useState([])
-    useEffect(() => {
-        fetch(`https://toys-marketplace-server-agmt-11.vercel.app/toys`)
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                setToys(data);
-            })
-            .catch()
-    }, [])
+    // const [toys, setToys] = useState([])
+    // useEffect(() => {
+    //     fetch(`https://toys-marketplace-server-agmt-11.vercel.app/toys`)
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             console.log(data)
+    //             setToys(data);
+    //         })
+    //         .catch()
+    // }, [])
     // search button add
+
+    const [toys, , isLoading] = useToys();
 
     const [seMore, setSeeMore] = useState(15)
 
@@ -43,7 +46,7 @@ const AllToys = () => {
             </div>
 
             {
-                toys ? <div className="overflow-x-auto md:overflow-hidden w-full mt-5 mb-10"><table className="table w-full">
+                !isLoading ? <div className="overflow-x-auto md:overflow-hidden w-full mt-5 mb-10"><table className="table w-full">
                     {/* head */}
                     <thead>
                         <tr>
@@ -69,8 +72,8 @@ const AllToys = () => {
                     }
 
                 </table>
-                </div> : <div className='w-full h-[500px] flex items-center justify-center'>
-                    <progress className="progress w-56"></progress>
+                </div> : <div className='w-full h-[500px] flex items-center text-black justify-center'>
+                <span className="loading loading-dots loading-md"></span>
                 </div>
             }
 

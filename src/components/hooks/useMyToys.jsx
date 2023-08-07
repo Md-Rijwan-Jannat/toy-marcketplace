@@ -9,7 +9,7 @@ const useMyToys = () => {
     const { data: myToys = [], refetch, isLoading } = useQuery({
         queryKey: ['toys'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/my-toys/${user.email}`)
+            const res = await fetch(`https://toys-marketplace-server-agmt-11.vercel.app/my-toys/${user.email}`)
             return res.json()
         }
     })

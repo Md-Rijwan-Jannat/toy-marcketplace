@@ -11,7 +11,7 @@ const MyToys = () => {
     const { user } = useContext(AuthContext)
     useEffect(() => { Aos.init() }, [])
     
-    const [myToys, refetch] = useMyToys();
+    const [myToys, refetch, isLoading] = useMyToys();
     console.log(myToys);
 
     // delete
@@ -26,7 +26,7 @@ const MyToys = () => {
                 <hr className='w-1/3' />
             </div>
             {
-                myToys ? <div className="overflow-x-auto md:overflow-hidden  w-full mt-5 mb-10">
+                !isLoading ? <div className="overflow-x-auto md:overflow-hidden  w-full mt-5 mb-10">
                     {
                         user ? <table className="table w-full">
                             {/* head */}
@@ -57,7 +57,7 @@ const MyToys = () => {
                         </div>
                     }
                 </div> : <div className='w-full h-[500px] flex items-center justify-center'>
-                    <progress className="progress w-56"></progress>
+                <span className="loading loading-dots loading-md"></span>
                 </div>
             }
         </div>
