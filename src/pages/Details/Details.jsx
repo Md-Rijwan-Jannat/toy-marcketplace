@@ -19,7 +19,7 @@ const Details = () => {
             <div data-aos="fade-right"
                 data-aos-duration="3000" className='grid grid-cols-1 items-center m-5 md:m-16 my-24 border rounded-2xl shadow-xl md:flex-row-reverse'>
                 <div className='md:w-full flex justify-center'>
-                    <img className='w-1/2 h-1/2 m-5 rounded-lg hover:shadow-2xl' src={photo} alt="" />
+                    <img className=' md:w-1/2 md:h-1/2 m-5 rounded-lg hover:shadow-2xl' src={photo} alt="" />
                 </div>
                 <div className='md:w-full'>
                     <div className='space-y-2  px-5 md:p-16'>
@@ -41,7 +41,7 @@ const Details = () => {
                                 <FaStarHalfAlt></FaStarHalfAlt>
                             </div>
                         </div>
-                        <div className='mt-5 flex items-center gap-5'>
+                        <div className='pt-5 flex items-center gap-2 pb:10 md:gap-5  pb-10'>
                             <Link className='btn text-xl bg-orange-500 hover:bg-orange-400 border-none '>By Now <FaShoppingCart className='text-3xl ml-5'></FaShoppingCart></Link>
                             <Link className='btn bg-red-600 hover:bg-red-500 border-none text-xl' to={'/allToys'}>See All Toys</Link>
                         </div>

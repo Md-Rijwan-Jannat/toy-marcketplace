@@ -22,7 +22,7 @@ const MyToys = () => {
             <Gallery></Gallery>
             <div data-aos="fade-up"
                 data-aos-duration="3000" className='flex flex-col items-center my-16 text-primary'>
-                <h2 className='text-3xl style '>My all Toys {myToys.length}</h2>
+                <h2 className='text-3xl style '>All Toys are Here <span className='text-5xl text-blue-500'>{myToys.length}</span></h2>
                 <hr className='w-1/3' />
             </div>
             {
