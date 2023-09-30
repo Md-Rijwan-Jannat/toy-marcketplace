@@ -8,7 +8,7 @@ const Banner = () => {
             <div className="flex items-center justify-start border-white w-full h-full bg-gray-900/40">
                 <Container>
                     <div className="text-start mr-5 md:mr-10 xl:mr-5">
-                            <h2 className='text-secondary text-[7vw] xl:text-[100px]'>
+                            <h2 className='text-secondary text-[6vw] xl:text-[80px]'>
                                 <span className='text-primary mb-2'>Welcome to our</span> toy sports cars site
                             </h2>
                         <Link to={'/addToy'} className='btn btn-xs md:btn  md:mt-16 w-full mt-16 md:w-[300px] text-white style'>add a toy</Link>

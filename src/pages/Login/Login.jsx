@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider/AuthProvider';
 import { toast } from 'react-hot-toast';
@@ -6,6 +6,7 @@ import Google from '../../shared/GoogleProvider/Google';
 import Aos from 'aos';
 import 'aos/dist/aos.css'
 import { Helmet } from 'react-helmet';
+import Container from '../../components/hooks/container/Container';
 
 const Login = () => {
     useEffect(() => { Aos.init() }, [])
@@ -35,7 +36,8 @@ const Login = () => {
             })
     }
     return (
-        <div className="hero my-16">
+     <Container>
+           <div className="hero py-24 xl:h-screen">
             <Helmet>Login page</Helmet>
             <div className="hero-content flex-col justify-around lg:flex-row-reverse w-full">
                 <div className="flex flex-col justify-center items-center lg:text-left md:w-1/">
@@ -68,12 +70,13 @@ const Login = () => {
                         <div className="form-control mt-6">
                             <button className="btn btn-secondary">Login</button>
                         </div>
-                        <p className='text-center my-5'>You don't have a account? <Link className='text-blue-500 font-bold' to={'/register'}>Please register</Link></p>
+                        <p className='text-center my-5'>You do not have a account? <Link className='text-blue-500 font-bold' to={'/register'}>Please register</Link></p>
                     </div>
                     <Google></Google>
                 </form>
             </div>
         </div>
+     </Container>
     );
 };
 

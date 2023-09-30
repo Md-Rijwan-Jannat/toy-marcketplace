@@ -18,7 +18,7 @@ const Reviews = () => {
     }, [])
     return (
         <div data-aos="fade-up"
-            data-aos-duration="2000" className='my-16 flex flex-col items-center m-5  rounded-xl shadow-sm pb-16 px-5'>
+            data-aos-duration="2000" className='my-16 flex flex-col items-center m-5 pb-16 px-5'>
             <div data-aos="fade-up"
                 data-aos-duration="3000" className='flex flex-col justify-center items-center w-full mb-16'>
                 <h2 className='text-3xl text-primary style flex flex-col items-center'><span>Customer ReviewS </span><FaUsers className='ml-3 my-5 text-5xl'></FaUsers></h2>

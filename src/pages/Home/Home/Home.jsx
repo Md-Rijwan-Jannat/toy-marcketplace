@@ -1,10 +1,11 @@
 
 import Banner from '../Banner/Banner';
-import Slider from 'react-slick';
 import Categories from '../CategoryToys/Categories';
 import Gallery from '../../../shared/Gallery/Gallery';
 import Reviews from '../../../shared/CustomerReview/Reviews';
 import Container from '../../../components/hooks/container/Container';
+import { SendMail } from '../SendMail/SendMail';
+import { Informations } from '../Informations/Informations';
 
 
 const Home = () => {
@@ -14,8 +15,9 @@ const Home = () => {
             <Container>
                 <Gallery></Gallery>
                 <Categories></Categories>
+                <Informations></Informations>
+                <SendMail></SendMail>
                 <Reviews></Reviews>
-                <Slider></Slider>
             </Container>
         </div>
     );
