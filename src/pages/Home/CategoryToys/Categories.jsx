@@ -26,9 +26,9 @@ const Categories = () => {
             <Tabs>
                 <TabList data-aos="fade-right"
                     data-aos-duration="3000" className="md:flex w-full justify-center mb-10">
-                    <Tab className="text-lg bg-purple-200 aria-selected:bg-purple-300 aria-selected:border-2 aria-selected:border-purple-500 m-3 rounded-md md:w-32 px-4 py-2 text-center">New cars</Tab>
-                    <Tab className="text-lg bg-purple-200 aria-selected:bg-purple-300 aria-selected:border-2 aria-selected:border-purple-500 m-3 rounded-md md:w-32 px-4 py-2 text-center">Sports cars</Tab>
-                    <Tab className="text-lg bg-purple-200 aria-selected:bg-purple-300 aria-selected:border-2 aria-selected:border-purple-500 m-3 rounded-md md:w-32 px-4 py-2 text-center">Old cars</Tab>
+                    <Tab className="text-lg bg-gray-950 text-yellow-500 px-3 py-1 rounded-md aria-selected:bg-gray-900 aria-selected:rounded-md aria-selected:text-rose-500 mx-6 border-none font-[700]">New cars</Tab>
+                    <Tab className="text-lg bg-gray-950 text-yellow-500 px-3 py-1 rounded-md aria-selected:bg-gray-900 aria-selected:rounded-md aria-selected:text-rose-500 mx-6 border-none font-[700]">Sports cars</Tab>
+                    <Tab className="text-lg bg-gray-950 text-yellow-500 px-3 py-1 rounded-md aria-selected:bg-gray-900 aria-selected:rounded-md aria-selected:text-rose-500 mx-6 border-none font-[700]">Old cars</Tab>
                 </TabList>
 
                 <TabPanel>
