@@ -22,13 +22,13 @@ const Categories = () => {
 
 
     return (
-        <div className='my-24 flex flex-col items-center  rounded-2xl py-24 shadow-md'>
+        <div className='my-24'>
             <Tabs>
                 <TabList data-aos="fade-right"
-                    data-aos-duration="3000" className="md:flex w-full justify-center mb-10">
-                    <Tab className="text-lg bg-gray-950 text-yellow-500 px-3 py-1 rounded-md aria-selected:bg-gray-900 aria-selected:rounded-md aria-selected:text-rose-500 mx-6 border-none font-[700]">New cars</Tab>
-                    <Tab className="text-lg bg-gray-950 text-yellow-500 px-3 py-1 rounded-md aria-selected:bg-gray-900 aria-selected:rounded-md aria-selected:text-rose-500 mx-6 border-none font-[700]">Sports cars</Tab>
-                    <Tab className="text-lg bg-gray-950 text-yellow-500 px-3 py-1 rounded-md aria-selected:bg-gray-900 aria-selected:rounded-md aria-selected:text-rose-500 mx-6 border-none font-[700]">Old cars</Tab>
+                    data-aos-duration="3000" className="flex w-full justify-center gap-2 md:mb-10">
+                    <Tab className="text-lg bg-gray-950 text-white px-3 font py-1 rounded-md aria-selected:bg-gray-900 aria-selected:rounded-md aria-selected:text-yellow-500 mx-2 md:mx-6 border-none font-[700]">New cars</Tab>
+                    <Tab className="text-lg bg-gray-950 text-white px-3 font py-1 rounded-md aria-selected:bg-gray-900 aria-selected:rounded-md aria-selected:text-yellow-500 mx-2 md:mx-6 border-none font-[700]">Sports cars</Tab>
+                    <Tab className="text-lg bg-gray-950 text-white px-3 font py-1 rounded-md aria-selected:bg-gray-900 aria-selected:rounded-md aria-selected:text-yellow-500 mx-2 md:mx-6 border-none font-[700]">Old cars</Tab>
                 </TabList>
 
                 <TabPanel>

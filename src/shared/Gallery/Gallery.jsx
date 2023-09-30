@@ -22,7 +22,7 @@ const Gallery = () => {
     return (
         <div >
             <div data-aos="fade-up"
-                data-aos-duration="3000" className='flex text-center flex-col justify-center items-center w-full mb-16'>
+                data-aos-duration="3000" className='flex text-center flex-col justify-center items-center w-full my-16'>
                 <h2 className='text-3xl text-blue-600 style flex flex-col items-center'><span>Cars GallerY </span><FaDelicious className='ml-3 my-5 text-yellow-500 text-6xl'></FaDelicious></h2>
                 <hr className='w-1/3' />
             </div>
