@@ -12,7 +12,7 @@ export const Informations = () => {
     return (
         <div>
             <div data-aos="fade-up"
-                data-aos-duration="3000" className='flex flex-col justify-center items-center w-full mb-16'>
+                data-aos-duration="3000" className='flex flex-col justify-center items-center w-full '>
                 <h2 className='text-3xl text-primary style flex flex-col items-center'><span>Our shop</span><FaCar className='ml-3 my-5 text-5xl'></FaCar></h2>
                 <hr className='w-1/3' />
             </div>

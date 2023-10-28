@@ -1,53 +1,74 @@
-import { useEffect, useState } from 'react';
+
+import {useState} from 'react'
+import { RiStarFill } from "react-icons/ri";
+import { useEffect } from 'react';
 import Aos from 'aos';
-import 'aos/dist/aos.css'
-import { FaStar, FaUsers } from 'react-icons/fa';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
-const Reviews = () => {
-    const [reviews, setReviews] = useState([])
-    useEffect(() => {
-        Aos.init();
-    }, [])
+const Testimonial = () => {
 
-    useEffect(() => {
-        fetch('https://toys-marketplace-server-agmt-11.vercel.app/customer')
-            .then(res => res.json())
-            .then(data => {
-                setReviews(data);
+      const [reviews, setReviews] = useState([])
+      useEffect(() => {
+          Aos.init();
+      }, [])
+  
+      useEffect(() => {
+          fetch('https://toys-marketplace-server-agmt-11.vercel.app/customer')
+              .then(res => res.json())
+              .then(data => {
+                  setReviews(data);
+              })
             })
-    }, [])
-    return (
-        <div data-aos="fade-up"
-            data-aos-duration="2000" className='my-16 flex flex-col items-center m-5 pb-16 px-5'>
-            <div data-aos="fade-up"
-                data-aos-duration="3000" className='flex flex-col justify-center items-center w-full mb-16'>
-                <h2 className='text-3xl text-primary style flex flex-col items-center'><span>Customer ReviewS </span><FaUsers className='ml-3 my-5 text-5xl'></FaUsers></h2>
-                <hr className='w-1/3' />
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 mt-10">
-                {reviews.map((review) => (
-                    <div data-aos="fade-up"
-                        data-aos-duration="1000" key={review._id} className="w-full bg-white shadow-md rounded-lg p-4 border hover:bg-slate-200" >
-                        <div className='absolute -top-12 w-full flex justify-center -left-1'>
-                            <img className='w-28 h-28 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2' src={review.img} alt="" />
-                        </div>
-                        <div className='relative pt-16 text-center'>
-                            <h2 className="text-lg font-bold mt-5">{review.name}</h2>
-                            <p className="mt-2"><span className='font-bold'>Comment: </span> {review.comment}</p>
-                            <div className="flex items-center justify-center mt-4">
-                                <span className="text-yellow-500 mr-4">{review.rating}</span>
-                                <FaStar className='text-orange-400'></FaStar>
-                                <FaStar className='text-orange-400'></FaStar>
-                                <FaStar className='text-orange-400'></FaStar>
-                                <FaStar className='text-orange-400'></FaStar>
-                                <FaStar className='text-orange-400'></FaStar>
-                            </div>
-                        </div>
+  return (
+    <section
+      id="testimonial"
+      className="w-full py-20 border-b-[1px] border-b-black px-2 md:px-5"
+    >
+         <div data-aos="fade-up"
+                    data-aos-duration="3000" className='flex flex-col items-center my-16 text-primary'>
+                    <h2 className='text-3xl style '>Testimonial</h2>
+                    <hr className='w-1/3' />
+                </div>
+                <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {reviews.map((item) => (
+            <div key={item._id} className="w-full h-auto flex flex-col lgl:flex-row justify-between mb-5">
+              <div className="w-full h-full bg-gradient-to-r from-[#edeeef] to-[#f1f7fd] p-8 rounded-lg  flex flex-col md:flex-row items-center gap-8 md:justify-start lgl:justify-center">
+                <img
+                  className="h-72 md:h-32 lgl:h-72 rounded-lg object-cover"
+                  src={item.img}
+                  alt="testimonialOne"
+                />
+                <div className="w-full flex flex-col justify-end">
+                  <p className="text-xs uppercase text-designColor tracking-wide mb-2">Bound - Trolola</p>
+                  <h3 className="text-2xl font-bold">{item.name}</h3>
+                  <p className="text-base tracking-wide text-gray-500">Operation Officer</p>
+                </div>
+              </div>
+              <div className="w-full h-full flex flex-col justify-between">
+                <div className="w-full py-10 bg-gradient-to-r from-[#f6f7f8] to-[#f2f5f8] rounded-lg shadow-shadowOne p-4 lgl:p-8 flex flex-col justify-center gap-4 lgl:gap-8">
+                  <div className="flex flex-row gap-2 items-center py-6 border-b-2 border-b-gray-600">
+                    <div>
+                      <p className="text-base text-gray-900">{item.rating}</p>
                     </div>
-                ))}
+                    <div className="text-yellow-500 flex gap-1">
+                      <RiStarFill />
+                      <RiStarFill />
+                      <RiStarFill />
+                      <RiStarFill />
+                      <RiStarFill />
+                    </div>
+                  </div>
+                  <p className="text-base font-titleFont text-gray-900 font-medium tracking-wide leading-6">
+                    {item.comment}
+                  </p>
+                </div>
+              </div>
             </div>
+          ))}
         </div>
-    );
-};
+    </section>
+  );
+}
 
-export default Reviews;
+export default Testimonial

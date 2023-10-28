@@ -3,7 +3,6 @@ import Toys from './Toys';
 import Aos from 'aos';
 import 'aos/dist/aos.css'
 import { AuthContext } from '../../Provider/AuthProvider/AuthProvider';
-import Gallery from '../../shared/Gallery/Gallery';
 import { Helmet } from 'react-helmet';
 import useMyToys from '../../components/hooks/useMyToys';
 import Container from '../../components/hooks/container/Container';
@@ -19,9 +18,8 @@ const MyToys = () => {
 
     return (
         <Container>
-            <div className='pt-16'>
+            <div className='pt-16 px-2 md:px-5'>
                 <Helmet><title>My toys</title></Helmet>
-                <Gallery></Gallery>
                 <div data-aos="fade-up"
                     data-aos-duration="3000" className='flex flex-col items-center py-16 text-primary'>
                     <h2 className='text-3xl style '>All Toys are Here <span className='text-5xl text-blue-500'>{myToys.length}</span></h2>

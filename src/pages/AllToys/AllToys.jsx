@@ -4,7 +4,6 @@ import Toy from './Toy';
 import Aos from 'aos';
 import 'aos/dist/aos.css'
 import { FaArrowRight } from 'react-icons/fa';
-import Gallery from '../../shared/Gallery/Gallery';
 import { Helmet } from 'react-helmet';
 import useToys from '../../components/hooks/useToys';
 import Container from '../../components/hooks/container/Container';
@@ -44,9 +43,8 @@ const AllToys = () => {
 
     return (
         <Container>
-            <div className='pt-20'>
+            <div className='pt-16 px-2 md:px-5'>
                 <Helmet><title>All toys is here</title></Helmet>
-                <Gallery></Gallery>
                 <div data-aos="fade-up"
                     data-aos-duration="3000" className='flex flex-col items-center my-16 text-primary'>
                     <h2 className='text-3xl style '>All Toys are Here <span className='text-5xl text-blue-500'>{toys.length}</span></h2>
