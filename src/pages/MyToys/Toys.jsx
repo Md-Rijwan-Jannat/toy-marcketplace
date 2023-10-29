@@ -66,7 +66,7 @@ const Toys = ({ toy,refetch }) => {
                 <td className='text-orange-500'>{quantity}</td>
 
                 <th>
-                    <Link to={`/updateToy/${_id}`} className="btn btn-block style my-10">Update</Link>
+                    <Link to={`/updateToy/${_id}`} className="text-white bg-gray-900 px-6 py-3 rounded-sm hover:bg-gray-950 my-10">Update</Link>
                 </th>
             </tr>
         </tbody>

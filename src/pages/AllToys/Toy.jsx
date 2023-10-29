@@ -32,7 +32,7 @@ const Toy = ({ toy }) => {
                 <td className='text-orange-500'>{quantity}</td>
 
                 <th>
-                    <Link to={`/details/${_id}`} className="btn bg-green-500 hover:bg-green-400 border-none">View details</Link>
+                    <Link to={`/details/${_id}`} className="text-white py-3 px-6 rounded-sm bg-rose-500 hover:bg-rose-600 border-none">View details</Link>
                 </th>
             </tr>
         </tbody>

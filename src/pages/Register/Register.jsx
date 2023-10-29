@@ -36,15 +36,15 @@ const Register = () => {
     }
     return (
         <Container>
-            <div className="w-full flex flex-col items-center mb-24 lg:flex-row-reverse pt-28 justify-center xl:h-screen">
+            <div className="w-full flex flex-col items-center mb-24 lg:flex-row-reverse pt-28 justify-center xl:h-screen p-2">
                 <Helmet><title>Register page</title></Helmet>
-                <div className="flex m-5 justify-center items-center md:w-1/2">
+                <div className="flex m-5 justify-center items-center md:w-1/2 md:block">
                     <img data-aos="fade-down-right"
                         data-aos-duration="3000" className='w-full md:w-[25em]' src="https://thumbs.dreamstime.com/b/funny-blue-colored-cartoon-car-amazing-eyes-119136148.jpg" alt="" />
                 </div>
                 <form onSubmit={handleRegister} className="w-full mx-5 md:w-1/2">
                     <div className="w-full p-5 md:p-10 border rounded-lg shadow-xl">
-                        <h2 className='text-2xl font-bold mb-5 text-primary'>Register Please</h2>
+                        <h2 className='text-2xl font-bold mb-5 text-rose-500'>Register Please</h2>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text font-bold"> User Name</span>
@@ -75,9 +75,9 @@ const Register = () => {
                             <input name='photo' required type="link" placeholder="photo url" className="input input-bordered" />
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Register</button>
+                            <button className="text-white bg-rose-500 hover:bg-rose-600 px-6 py-3 w-full text-center rounded-sm">Register</button>
                         </div>
-                        <p className='text-center my-5'>You have a account? <Link className='text-primary font-bold' to={'/login'}>Please login</Link></p>
+                        <p className='text-center my-5'>You have a account? <Link className='text-rose-500 font-bold hover:border-b hover:border-rose-500' to={'/login'}>Please login</Link></p>
                     </div>
                     <Google></Google>
                 </form>

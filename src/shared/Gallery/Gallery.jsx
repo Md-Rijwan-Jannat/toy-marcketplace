@@ -4,6 +4,8 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { Loader } from '../../components/hooks/container/loader/Loader';
+import { Title } from '../../components/hooks/container/Title/Title';
 
 
 export const Gallery = () => {
@@ -28,38 +30,14 @@ export const Gallery = () => {
 
   return (
     <div>
+      <Title title={"Cars Gallery"}/>
+      {
+       currentItems.length== 0 ?<Loader/>: <>
       <div
-        data-aos="fade-up"
-        data-aos-duration="3000"
-        className="flex text-center flex-col justify-center items-center w-full my-16 px-2 md:px-5"
-      >
-        <h2 className="text-3xl text-blue-600 style flex flex-col items-center">
-          <span>Cars Gallery </span>
-        </h2>
-        <hr className="w-1/3" />
-      </div>
-      <motion.div
-      className="masonry lg:h-[1000px]"
-        initial="pageInitial"
-        animate="pageAnimate"
-        exit="pageExit"
-        variants={{
-          pageInitial: {
-            opacity: 0,
-          },
-          pageAnimate: {
-            opacity: 1,
-          },
-          pageExit: {
-            opacity: 0,
-          },
-        }}
-        transition={{
-          duration: 0.5,
-        }}
-      >
-        {currentItems.map((toy) => (
-          <div key={toy._id} className="grid">
+      className="masonry lg:h-[1000px] px-3 lg:px-1">
+         {currentItems.map((toy) => (
+          <div  data-aos="fade-up"
+          data-aos-duration="2000 " key={toy._id} className="grid">
             <Link to={`/details/${toy._id}`}>
               <img src={toy.photo} />
               <div className="grid__body">
@@ -74,7 +52,9 @@ export const Gallery = () => {
             </Link>
           </div>
         ))}
-      </motion.div>
+      </div>
+        </> 
+       }
       <div className="pagination">
       <motion.div
   initial={{ opacity: 0, y: -20 }}

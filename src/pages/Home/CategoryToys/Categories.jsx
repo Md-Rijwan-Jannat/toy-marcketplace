@@ -4,6 +4,7 @@ import 'react-tabs/style/react-tabs.css';
 import Category from './Category';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
+import { Loader } from '../../../components/hooks/container/loader/Loader';
 
 const Categories = () => {
   const [selectedTab, setSelectedTab] = useState(0); // Initialize with the default active tab index
@@ -45,21 +46,21 @@ const Categories = () => {
           className="flex w-full justify-center gap-2 md:mb-10"
         >
           <Tab
-            className={`text-white p-4 rounded bg-rose-500 shadow-md flex items-center justify-center px-24 ${
+            className={`text-white p-4 rounded bg-rose-500 shadow-md flex items-center justify-center md:px-24 ${
               selectedTab === 0 ? 'active' : ''
             }`}
           >
             New cars
           </Tab>
           <Tab
-            className={`text-white p-4 rounded bg-rose-500 shadow-md flex items-center justify-center px-24 ${
+            className={`text-white p-4 rounded bg-rose-500 shadow-md flex items-center justify-center md:px-24 ${
               selectedTab === 1 ? 'active' : ''
             }`}
           >
             Sports cars
           </Tab>
           <Tab
-            className={`text-white p-4 rounded bg-rose-500 shadow-md flex items-center justify-center px-24 ${
+            className={`text-white p-4 rounded bg-rose-500 shadow-md flex items-center justify-center md:px-24 ${
               selectedTab === 2 ? 'active' : ''
             }`}
           >
@@ -68,11 +69,15 @@ const Categories = () => {
         </TabList>
 
         <TabPanel>
+           {
+            !newCar.length == 0 ? <> 
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-5 md:p-10'>
-            {newCar.map((category) => (
+             {newCar.map((category) => (
               <Category key={category._id} category={category} />
             ))}
           </div>
+            </>: <Loader/>
+           }
           {newCar.length < toys.filter((item) => item.category === 'new').length && (
             <button
               className='text-rose-500 border border-rose-500 rounded-full px-4 py-2 mx-auto block mt-4'
@@ -92,11 +97,15 @@ const Categories = () => {
         </TabPanel>
 
         <TabPanel>
+        {
+            !sportsCar.length == 0 ? <> 
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-5 md:p-10'>
-            {sportsCar.map((category) => (
+             {sportsCar.map((category) => (
               <Category key={category._id} category={category} />
             ))}
           </div>
+            </>: <Loader/>
+           }
           {sportsCar.length < toys.filter((item) => item.category === 'sports').length && (
             <button
               className='text-rose-500 border border-rose-500 rounded-full px-4 py-2 mx-auto block mt-4'
@@ -116,11 +125,15 @@ const Categories = () => {
         </TabPanel>
 
         <TabPanel>
+        {
+            !oldCar.length == 0 ? <> 
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-5 md:p-10'>
-            {oldCar.map((category) => (
+             {oldCar.map((category) => (
               <Category key={category._id} category={category} />
             ))}
           </div>
+            </>: <Loader/>
+           }
           {oldCar.length < toys.filter((item) => item.category === 'Old').length && (
             <button
               className='text-rose-500 border border-rose-500 rounded-full px-4 py-2 mx-auto block mt-4 hover:bg-rose-500 w-[150px] hover:text-white'

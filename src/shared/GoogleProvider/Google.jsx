@@ -27,7 +27,7 @@ const Google = () => {
     }
     return (
         <div data-aos="fade-right"
-        data-aos-duration="3000" onClick={googleHandler} className='btn btn-outline btn-primary my-5 px-5 h-12 btn-block'>
+        data-aos-duration="3000" onClick={googleHandler} className='border border-rose-500 hover:bg-red-300 rounded-lg my-5 px-5 h-12 flex items-center justify-center gap-3 text-black hover:text-white'>
             <img className='w-[40px]' src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png" alt="" />
             <p className='ml-2'>continue with google</p>
         </div>

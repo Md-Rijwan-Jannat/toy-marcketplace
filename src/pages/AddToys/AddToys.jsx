@@ -5,6 +5,7 @@ import 'aos/dist/aos.css'
 import { AuthContext } from '../../Provider/AuthProvider/AuthProvider';
 import { Helmet } from 'react-helmet';
 import Container from '../../components/hooks/container/Container';
+import { Title } from '../../components/hooks/container/Title/Title';
 
 const AddToys = () => {
     useEffect(() => {
@@ -43,15 +44,11 @@ const AddToys = () => {
     }
     return (
         <Container>
-            <div className='h-screen flex items-center flex-col justify-center'>
+            <div className='md:h-screen pt-32 flex items-center flex-col justify-center'>
                 <Helmet>
-                    <title>Add your toy</title>
+                    <title>Add your Toy</title>
                 </Helmet>
-                <div data-aos="fade-up"
-                    data-aos-duration="3000" className='flex flex-col justify-center items-center w-full py-24'>
-                    <h2 className='text-3xl style text-secondary-focus'>Add a Toys</h2>
-                    <hr className='w-1/3' />
-                </div>
+               <Title title={"Add your won Toy"}/>
                 <form data-aos="fade-right p-10 bg-neutral-focus bg-opacity-10 text-gray-500 rounded-3xl"
                     data-aos-duration="3000" onSubmit={addToyHandler} className='w-full mb-16 space-y-3 border p-3 rounded-xl shadow-2xl md:p-10'>
 
@@ -101,13 +98,13 @@ const AddToys = () => {
                         </div>
                     </div>
                     {/* row 5 */}
-                    <div className='md:flex items-center justify-center gap-5 full'>
+                    <div className='md:flex items-center justify-center gap-5 full mb-10'>
                         <div className='space-y-2 font-bold w-full md:w-1/2'>
                             <h3 className='text-center'>Description</h3>
                             <textarea type="text" required name='description' placeholder="description" className="textarea textarea-bordered w-full" />
                         </div>
                     </div>
-                    <button className='btn btn-secondary btn-block style my-10'>Add A Toy</button>
+                    <button className='text-white bg-rose-500 hover:bg-rose-600 px-6 py-3 w-full text-center rounded-sm '>Add a Toy</button>
 
 
                 </form>

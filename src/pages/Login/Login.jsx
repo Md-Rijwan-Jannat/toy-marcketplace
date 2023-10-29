@@ -37,18 +37,18 @@ const Login = () => {
     }
     return (
      <Container>
-           <div className="hero py-24 xl:h-screen">
+           <div className="hero py-28 xl:h-screen">
             <Helmet>Login page</Helmet>
             <div className="hero-content flex-col justify-around lg:flex-row-reverse w-full">
-                <div className="flex flex-col justify-center items-center lg:text-left md:w-1/">
+                <div className="flex flex-col md:block justify-center items-center lg:text-left md:w-1/">
                     <h2 data-aos="fade-right"
-                        data-aos-duration="3000" className='text-4xl style text-secondary md:w-1/2'><span className='text-primary'>Login</span> our toy sports <span className='text-primary'>car site</span></h2>
+                        data-aos-duration="3000" className='text-4xl style text-secondary md:w-1/2'><span className='text-rose-500'>Login</span> <span className='text-gray-900'>our toy sports </span> <span className='text-rose-500'>car site</span></h2>
                     <img data-aos="fade-down-left"
                         data-aos-duration="3000" className='w-64' src="https://static.vecteezy.com/system/resources/previews/013/923/543/original/blue-car-logo-png.png" alt="" />
                 </div>
                 <form onSubmit={handleLogin} className="flex-shrink-0 md:w-1/2 max-w-sm bg-base-100">
                     <div className=" border rounded-lg p-8 shadow-xl">
-                        <h2 className='text-2xl font-bold mb-5 text-primary'>Login</h2>
+                        <h2 className='text-2xl font-bold mb-5 text-rose-500'>Login</h2>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text font-bold">Email</span>
@@ -68,9 +68,9 @@ const Login = () => {
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-secondary">Login</button>
+                            <button className="text-white bg-rose-500 hover:bg-rose-600 px-6 py-3 w-full text-center rounded-sm">Login</button>
                         </div>
-                        <p className='text-center my-5'>You do not have a account? <Link className='text-blue-500 font-bold' to={'/register'}>Please register</Link></p>
+                        <p className='text-center my-5'>You do not have a account? <Link className='text-rose-500 font-bold hover:border-b hover:border-rose-500' to={'/register'}>Please register</Link></p>
                     </div>
                     <Google></Google>
                 </form>

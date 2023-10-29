@@ -6,9 +6,9 @@ import toy_pogo from '../../assets/toy-logo-removebg-preview.png'
 
 const Footer = () => {
     return (
-        <footer className="  text-base-content border-t-2">
+        <footer className="text-base-content">
             <Container>
-                <div className='footer p-10 rounded-t-[50px] mt-10'>
+                <div className='footer p-10 mt-10 bg-gradient-to-r from-[#f7f7f7] to-[#eff3f7] rounded-t-md'>
                     <div>
                         <img className='w-[200px]' src={toy_pogo} alt="" />
                         <p className='text-ld font-semibold mt-5'>The Evolution of the Toy <br /> Industry From Playful Entertainment <br /> to Educational Enrichment</p>

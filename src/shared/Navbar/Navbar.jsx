@@ -79,7 +79,7 @@ function Navbar() {
     <React.Fragment>
     <Container>
     <div className='relative w-full'>
-  <nav className={`max-w-[1400px] mx-auto px-4 py-7 flex justify-between items-center fixed w-full z-50 ${isScrolled ? 'scrolled-background' : ''}`}>
+  <nav className={`max-w-[1400px] mx-auto px-4 py-7 flex justify-between items-center fixed w-full z-[999] ${isScrolled ? 'scrolled-background' : ''}`}>
         <a className="text-3xl font-bold leading-none" href="#">
         <img className='w-[60px] md:w-[140px] h-fit rounded-3xl' src={toy_logo} alt="" />
         </a>
@@ -92,16 +92,16 @@ function Navbar() {
           </button>
         </div>
         <ul className="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6">
-        <li><NavLink className={({ isActive }) => isActive ? "text-sm text-rose-600 font-bold mx-3 border-b-2 border-rose-500" : "mx-3 hover:border-b-2 border-rose-500 text-sm text-gray-900 hover:text-gray-950"} to={'/'}>Home</NavLink></li>
-        <li><NavLink className={({ isActive }) => isActive ? "text-sm text-rose-600 font-bold mx-3 border-b-2 border-rose-500" : "mx-3 hover:border-b-2 border-rose-500 text-sm text-gray-900 hover:text-gray-950"} to={'/allToys'}>All-Toys</NavLink></li>
-        <li><NavLink className={({ isActive }) => isActive ? "text-sm text-rose-600 font-bold mx-3 border-b-2 border-rose-500" : "mx-3 hover:border-b-2 border-rose-500 text-sm text-gray-900 hover:text-gray-950"} to={'/blogs'}>Blogs</NavLink></li>
+        <li><NavLink className={({ isActive }) => isActive ? "text-sm text-rose-600 font-bold mx-3 border-b-2 border-rose-500 uppercase" : "uppercase mx-3 hover:border-b-2 border-rose-500 text-sm text-gray-900 hover:text-gray-950"} to={'/'}>Home</NavLink></li>
+        <li><NavLink className={({ isActive }) => isActive ? "text-sm text-rose-600 font-bold mx-3 border-b-2 border-rose-500 uppercase" : "uppercase mx-3 hover:border-b-2 border-rose-500 text-sm text-gray-900 hover:text-gray-950"} to={'/allToys'}>All-Toys</NavLink></li>
         {
             user && <>
-                <li><NavLink className={({ isActive }) => isActive ? "text-sm text-rose-600 font-bold mx-3 border-b-2 border-rose-500" : "mx-3 hover:border-b-2 border-rose-500 text-sm text-gray-900 hover:text-gray-950"} to={`/myToys/${user?.email}`}>My Toys</NavLink></li>
-                <li><NavLink className={({ isActive }) => isActive ? "text-sm text-rose-600 font-bold mx-3 border-b-2 border-rose-500" : "mx-3 hover:border-b-2 border-rose-500 text-sm text-gray-900 hover:text-gray-950"} to={'/addToy'}>Add A Toy</NavLink></li>
+                <li><NavLink className={({ isActive }) => isActive ? "text-sm text-rose-600 font-bold mx-3 border-b-2 border-rose-500 uppercase" : "uppercase mx-3 hover:border-b-2 border-rose-500 text-sm text-gray-900 hover:text-gray-950"} to={`/myToys/${user?.email}`}>My Toys</NavLink></li>
+                <li><NavLink className={({ isActive }) => isActive ? "text-sm text-rose-600 font-bold mx-3 border-b-2 border-rose-500 uppercase" : "uppercase mx-3 hover:border-b-2 border-rose-500 text-sm text-gray-900 hover:text-gray-950"} to={'/addToy'}>Add A Toy</NavLink></li>
                 
             </>
         }
+         <li><NavLink className={({ isActive }) => isActive ? "text-sm text-rose-600 font-bold mx-3 border-b-2 border-rose-500 uppercase" : "uppercase mx-3 hover:border-b-2 border-rose-500 text-sm text-gray-900 hover:text-gray-950"} to={'/blogs'}>Blogs</NavLink></li>
         </ul>
         {
             user? <NavLink to={'login'}className="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold rounded-xl transition duration-200" onClick={logOutHandler} >Logout</NavLink>:  <NavLink to="/signin" className="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold rounded-xl transition duration-200">
@@ -115,7 +115,7 @@ function Navbar() {
       </nav>
   </div>
     </Container>
-      <div className="navbar-menu relative z-50 hidden">
+      <div className="navbar-menu relative z-[999] hidden">
         <div className="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
         <nav className="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
           <div className="flex items-center mb-8">
@@ -131,19 +131,19 @@ function Navbar() {
           <div>
             <ul>
               <li className="mb-1">
-                <NavLink to="/" className="block p-4 text-sm font-semibold text-gray-400 hover:bg-rose-50 hover:text-rose-600 rounded">
+                <NavLink to="/" className="block p-4 text-sm font-semibold text-gray-400 hover:bg-rose-50 hover:text-rose-600 rounded uppercase">
                   Home
                 </NavLink>
               </li>
-              <li><NavLink className="block p-4 text-sm font-semibold text-gray-400 hover:bg-rose-50 hover:text-rose-600 rounded" to={'/allToys'}>All-Toys</NavLink></li>
-        <li><NavLink className="block p-4 text-sm font-semibold text-gray-400 hover:bg-rose-50 hover:text-rose-600 rounded" to={'/blogs'}>Blogs</NavLink></li>
+              <li><NavLink className="block p-4 text-sm font-semibold text-gray-400 hover:bg-rose-50 hover:text-rose-600 rounded uppercase" to={'/allToys'}>All-Toys</NavLink></li>
         {
             user && <>
-                <li><NavLink className="block p-4 text-sm font-semibold text-gray-400 hover:bg-rose-50 hover:text-rose-600 rounded" to={`/myToys/${user?.email}`}>My Toys</NavLink></li>
-                <li><NavLink className="block p-4 text-sm font-semibold text-gray-400 hover:bg-rose-50 hover:text-rose-600 rounded" to={'/addToy'}>Add A Toy</NavLink></li>
+                <li><NavLink className="block p-4 text-sm font-semibold text-gray-400 hover:bg-rose-50 hover:text-rose-600 rounded uppercase" to={`/myToys/${user?.email}`}>My Toys</NavLink></li>
+                <li><NavLink className="block p-4 text-sm font-semibold text-gray-400 hover:bg-rose-50 hover:text-rose-600 rounded uppercase" to={'/addToy'}>Add A Toy</NavLink></li>
             </> 
                
         }
+        <li><NavLink className="block p-4 text-sm font-semibold text-gray-400 hover:bg-rose-50 hover:text-rose-600 rounded uppercase" to={'/blogs'}>Blogs</NavLink></li>
             </ul>
             <div className="mt-6">
                 {
