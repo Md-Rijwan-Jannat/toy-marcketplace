@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;600&display=swap");
 
 /* Variables */
 .toy-card-root {
@@ -7,7 +7,7 @@
 
 /* Global Styles */
 .font {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
 }
 
 /* Card Styles */
@@ -55,10 +55,10 @@
 }
 
 .cover:before {
-  content: '';
+  content: "";
   position: absolute;
-  border: 5px solid rgba(255, 255, 255, .5);
-  box-shadow: 0 0 12px rgba(0, 0, 0, .3);
+  border: 5px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
   top: 20px;
   left: 20px;
   right: 20px;
@@ -70,7 +70,7 @@
 }
 
 .cover:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0px;
   left: 0px;
@@ -78,9 +78,8 @@
   bottom: 0px;
   z-index: 2;
   transition: ease all 1.3s;
-  background: rgba(0, 0, 0, .4);
+  background: rgba(0, 0, 0, 0.4);
 }
-
 
 .cover h1 {
   font-weight: 600;
@@ -124,7 +123,7 @@
 
 .card-back a {
   transform-style: preserve-3d;
-  transition: ease transform var(--transition-time), ease background .5s;
+  transition: ease transform var(--transition-time), ease background 0.5s;
   transform: translateZ(-1px) rotatey(-180deg);
   background: transparent;
   border: 1px solid white;

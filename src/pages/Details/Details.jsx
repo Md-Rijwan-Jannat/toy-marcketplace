@@ -1,15 +1,15 @@
-import { useEffect } from 'react';
-import { useLoaderData, useNavigate } from 'react-router-dom'; // Removed useNavigate
-import Aos from 'aos';
-import 'aos/dist/aos.css';
-import Reviews from '../../shared/CustomerReview/Reviews';
-import { Helmet } from 'react-helmet';
-import Container from '../../components/hooks/container/Container';
-import useToys from '../../components/hooks/useToys';
-import { FaCheckCircle, FaStar } from 'react-icons/fa';
-import { MdEmail, MdToys } from 'react-icons/md';
-import { BiSolidCategory, BiSolidUserRectangle } from 'react-icons/bi';
-import { FiShoppingCart } from 'react-icons/fi';
+import { useEffect } from "react";
+import { useLoaderData, useNavigate } from "react-router-dom"; // Removed useNavigate
+import Aos from "aos";
+import "aos/dist/aos.css";
+import Reviews from "../../shared/CustomerReview/Reviews";
+import { Helmet } from "react-helmet";
+import Container from "../../components/hooks/container/Container";
+import useToys from "../../components/hooks/useToys";
+import { FaCheckCircle, FaStar } from "react-icons/fa";
+import { MdEmail, MdToys } from "react-icons/md";
+import { BiSolidCategory, BiSolidUserRectangle } from "react-icons/bi";
+import { FiShoppingCart } from "react-icons/fi";
 
 const Details = () => {
   useEffect(() => {
@@ -42,64 +42,79 @@ const Details = () => {
 
   return (
     <Container>
-      <div data-aos='fade-right' data-aos-duration='3000' className='pt-28 px-2 md:px-5 p-5'>
+      <div
+        data-aos="fade-right"
+        data-aos-duration="3000"
+        className="pt-28 px-2 md:px-5 p-5"
+      >
         <Helmet>
           <title>Toys details</title>
         </Helmet>
-        <div data-aos='fade-right' data-aos-duration='3000' className=''>
-          <div className='mt-10  flex flex-col md:flex-row gap-10 m-2 rounded bg-gradient-to-r from-[#fefeff] to-[#e9f3fd]'>
-            <div className='w-full md:w-1/2 rounded flex flex-col items-center justify-center'>
-              <img src={photo} alt='' />
-              <button className='bg-gradient-to-r from-[#b3d8ee] to-[#d2e0ee] w-full text-center hover:bg-green-200 px-10 py-3 mx-5 justify-center rounded-md my-3 flex items-center gap-2 text-rose-600 font-sans'>
-                <MdToys /> Delivery Charge: <span className='text-green-600'> Free </span>
+        <div data-aos="fade-right" data-aos-duration="3000" className="">
+          <div className="mt-10  flex flex-col md:flex-row gap-10 m-2 rounded bg-gradient-to-r from-[#fefeff] to-[#e9f3fd]">
+            <div className="w-full md:w-1/2 rounded flex flex-col items-center justify-center">
+              <img src={photo} alt="" />
+              <button className="bg-gradient-to-r from-[#b3d8ee] to-[#d2e0ee] w-full text-center hover:bg-green-200 px-10 py-3 mx-5 justify-center rounded-md my-3 flex items-center gap-2 text-rose-600 font-sans">
+                <MdToys /> Delivery Charge:{" "}
+                <span className="text-green-600"> Free </span>
               </button>
-              <button className='bg-rose-500 hover:bg-rose-600 px-10 py-3 text-white my-3 flex items-center gap-2'>
+              <button className="bg-rose-500 hover:bg-rose-600 px-10 py-3 text-white my-3 flex items-center gap-2">
                 <FiShoppingCart /> Add to Cart
               </button>
             </div>
-            <div className='flex flex-col items-start w-full md:w-1/2'>
-              <h2 className='text-4xl font-semibold mb-5'>
-                Name: <span className='text-rose-500 uppercase'>{toyName}</span>
+            <div className="flex flex-col items-start w-full md:w-1/2">
+              <h2 className="text-4xl font-semibold mb-5">
+                Name: <span className="text-rose-500 uppercase">{toyName}</span>
               </h2>
-              <p className='text-xl flex items-cacenter gap-2 mb-5 '>
-                <FaCheckCircle className='mr-2 text-green-400' /> In stock: <span className='text-rose-500'>{quantity}</span>
+              <p className="text-xl flex items-cacenter gap-2 mb-5 ">
+                <FaCheckCircle className="mr-2 text-green-400" /> In stock:{" "}
+                <span className="text-rose-500">{quantity}</span>
               </p>
-              <p className='text-2xl flex items-center gap-2 mb-4 font-semibold'>
-                Price: <span className='text-rose-500 text-3xl'>{"$" + "" + price}</span>
+              <p className="text-2xl flex items-center gap-2 mb-4 font-semibold">
+                Price:{" "}
+                <span className="text-rose-500 text-3xl">
+                  {"$" + "" + price}
+                </span>
               </p>
-              <p className='text-xl flex items-center gap-2 mb-2'>
-                <MdEmail className='mr-2' />Email: <span className='text-rose-500'>{email}</span>
+              <p className="text-xl flex items-center gap-2 mb-2">
+                <MdEmail className="mr-2" />
+                Email: <span className="text-rose-500">{email}</span>
               </p>
-              <p className='text-xl flex items-center gap-2 mb-2'>
-                <BiSolidUserRectangle className='mr-2' /> Seller: <span className='text-rose-500'>{sellerName}</span>
+              <p className="text-xl flex items-center gap-2 mb-2">
+                <BiSolidUserRectangle className="mr-2" /> Seller:{" "}
+                <span className="text-rose-500">{sellerName}</span>
               </p>
-              <p className='text-xl flex items-center gap-2 mb-2'>
-                <BiSolidCategory className='mr-2' /> Category: <span className='text-rose-500'>{category}</span>
+              <p className="text-xl flex items-center gap-2 mb-2">
+                <BiSolidCategory className="mr-2" /> Category:{" "}
+                <span className="text-rose-500">{category}</span>
               </p>
-              <div className='flex items-center gap-2'>
-                <span className='mt-[0.6] mr-2'>{toy_rate + ".0"} </span>
-                <div className='flex items-center gap-1'>
-                  <FaStar className='text-yellow-500' />
-                  <FaStar className='text-yellow-500' />
-                  <FaStar className='text-yellow-500' />
-                  <FaStar className='text-yellow-500' />
-                  <FaStar className='text-yellow-500' />
+              <div className="flex items-center gap-2">
+                <span className="mt-[0.6] mr-2">{toy_rate + ".0"} </span>
+                <div className="flex items-center gap-1">
+                  <FaStar className="text-yellow-500" />
+                  <FaStar className="text-yellow-500" />
+                  <FaStar className="text-yellow-500" />
+                  <FaStar className="text-yellow-500" />
+                  <FaStar className="text-yellow-500" />
                 </div>
               </div>
-              <p className='my-3 text-sm'>{description}</p>
+              <p className="my-3 text-sm">{description}</p>
             </div>
           </div>
         </div>
-        <div className='my-5'>
-          <h3 className='text-rose-500 text-3xl font-semibold border-b-2 border-rose-600 w-[200px]'>
-            <span className='pb-3'> Related Toys</span>
+        <div className="my-5">
+          <h3 className="text-rose-500 text-3xl font-semibold border-b-2 border-rose-600 w-[200px]">
+            <span className="pb-3"> Related Toys</span>
           </h3>
-          <div className='grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5 my-12'>
+          <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5 my-12">
             {related_toys.map((toy) => (
-              <div data-aos='fade-up' data-aos-duration='3000 ' key={toy._id}>
-                <div onClick={() => clickHandler(toy._id)} className='group relative rounded'>
-                  <div className='group-hover:scale-105 transition-transform duration-300 rounded-md hover:border-2 hover:border-gray-500 active:border-2 active:border-gray-500'>
-                    <img className='w-full bg-cover' src={toy.photo} alt='' />
+              <div data-aos="fade-up" data-aos-duration="3000 " key={toy._id}>
+                <div
+                  onClick={() => clickHandler(toy._id)}
+                  className="group relative rounded"
+                >
+                  <div className="group-hover:scale-105 transition-transform duration-300 rounded-md hover:border-2 hover:border-gray-500 active:border-2 active:border-gray-500">
+                    <img className="w-full bg-cover" src={toy.photo} alt="" />
                   </div>
                 </div>
               </div>

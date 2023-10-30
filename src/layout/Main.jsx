@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
-import Navbar from '../shared/Navbar/Navbar';
-import Footer from '../shared/Footer/Footer';
-import { Outlet } from 'react-router-dom';
-import { Loader2 } from '../components/hooks/container/loader/Loader2';
+import { useState, useEffect } from "react";
+import Navbar from "../shared/Navbar/Navbar";
+import Footer from "../shared/Footer/Footer";
+import { Outlet } from "react-router-dom";
+import { Loader2 } from "../components/hooks/container/loader/Loader2";
 
 const Main = () => {
   const [showLoader, setShowLoader] = useState(true);
@@ -19,13 +19,15 @@ const Main = () => {
 
   return (
     <div>
-      {
-        showLoader ? <Loader2/> : <>
-        <Navbar />
-      <Outlet />
-      <Footer />
+      {showLoader ? (
+        <Loader2 />
+      ) : (
+        <>
+          <Navbar />
+          <Outlet />
+          <Footer />
         </>
-      }
+      )}
     </div>
   );
 };

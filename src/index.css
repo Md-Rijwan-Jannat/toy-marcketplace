@@ -3,29 +3,26 @@
 @tailwind utilities;
 
 .font-style {
-    font-family: 'Permanent Marker', cursive;
+  font-family: "Permanent Marker", cursive;
 }
-.style{
-    font-family: 'Bruno Ace SC', cursive;
+.style {
+  font-family: "Bruno Ace SC", cursive;
 }
-.blogs-font{
-    font-family: 'Poppins', sans-serif;
+.blogs-font {
+  font-family: "Poppins", sans-serif;
 }
-
-
 
 .scrolled-background {
-    background-color: white;
-    transition: background-color 0.3s ease; /* Adjust the duration and timing function as needed */
-  }
-  
-  .menu-open {
-    transform: translateX(0);
-    transition: transform 0.3s ease; /* Adjust the duration and timing function as needed */
-  }
-  
-  .menu-closed {
-    transform: translateX(-100%);
-    transition: transform 0.5s ease; /* Adjust the duration and timing function as needed */
-  }
-  
+  background-color: white;
+  transition: background-color 0.3s ease; /* Adjust the duration and timing function as needed */
+}
+
+.menu-open {
+  transform: translateX(0);
+  transition: transform 0.3s ease; /* Adjust the duration and timing function as needed */
+}
+
+.menu-closed {
+  transform: translateX(-100%);
+  transition: transform 0.5s ease; /* Adjust the duration and timing function as needed */
+}

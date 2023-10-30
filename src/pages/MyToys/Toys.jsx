@@ -1,76 +1,86 @@
-import { useEffect } from 'react';
-import { FaTimes } from 'react-icons/fa';
-import Swal from 'sweetalert2';
-import Aos from 'aos';
-import 'aos/dist/aos.css'
-import { Link } from 'react-router-dom';
+import { useEffect } from "react";
+import { FaTimes } from "react-icons/fa";
+import Swal from "sweetalert2";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { Link } from "react-router-dom";
 
-const Toys = ({ toy,refetch }) => {
-    useEffect(() => { Aos.init() }, [])
-    const { _id, toyName, sellerName, email, price, quantity, photo } = toy;
+const Toys = ({ toy, refetch }) => {
+  useEffect(() => {
+    Aos.init();
+  }, []);
+  const { _id, toyName, sellerName, email, price, quantity, photo } = toy;
 
-
-    const handleDelete = (_id) => {
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                fetch(`https://toys-marketplace-server-agmt-11.vercel.app/toys/${_id}`, {
-                    method: "DELETE"
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        console.log(data);
-                        if (data.deletedCount > 0) {
-                            refetch();
-                            Swal.fire(
-                                'Deleted!',
-                                'Your toy has been deleted!.',
-                                'success'
-                            )
-
-                        }
-                    })
-
-                    .catch(error => console.log(error))
+  const handleDelete = (_id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    })
+      .then((result) => {
+        if (result.isConfirmed) {
+          fetch(
+            `https://toys-marketplace-server-agmt-11.vercel.app/toys/${_id}`,
+            {
+              method: "DELETE",
             }
-        })
-            .catch(error => console.log(error));
-    }
-    return (
-        <tbody data-aos="fade-up" className='border-b'>
-            {/* row 1 */}
-            <tr>
-                <th>
-                    <div onClick={() => handleDelete(_id)} className='btn btn-circle bg-red-500 hover:bg-red-400 border-none'>
-                        <FaTimes className='w-5 h-5'></FaTimes>
-                    </div>
-                </th>
-                <td>
-                    <div className="w-28 h-28">
-                        <img className='rounded-xl' src={photo} alt="Avatar Tailwind CSS Component" />
-                    </div>
-                </td>
-                <td className='font-bold'>
-                    {toyName}
-                </td>
-                <td>{sellerName}</td>
-                <td className='text-red-500'>{email}</td>
-                <td className='text-yellow-500'>{'$' + price}</td>
-                <td className='text-orange-500'>{quantity}</td>
+          )
+            .then((res) => res.json())
+            .then((data) => {
+              console.log(data);
+              if (data.deletedCount > 0) {
+                refetch();
+                Swal.fire("Deleted!", "Your toy has been deleted!.", "success");
+              }
+            })
 
-                <th>
-                    <Link to={`/updateToy/${_id}`} className="text-white bg-gray-900 px-6 py-3 rounded-sm hover:bg-gray-950 my-10">Update</Link>
-                </th>
-            </tr>
-        </tbody>
-    );
+            .catch((error) => console.log(error));
+        }
+      })
+      .catch((error) => console.log(error));
+  };
+  return (
+    <tbody data-aos="fade-up" className="border-b">
+      {/* row 1 */}
+      <tr>
+        <th>
+          <div
+            onClick={() => handleDelete(_id)}
+            className="btn btn-circle bg-red-500 hover:bg-red-400 border-none"
+          >
+            <FaTimes className="w-5 h-5"></FaTimes>
+          </div>
+        </th>
+        <td>
+          <div className="w-28 h-28">
+            <img
+              className="rounded-xl"
+              src={photo}
+              alt="Avatar Tailwind CSS Component"
+            />
+          </div>
+        </td>
+        <td className="font-bold">{toyName}</td>
+        <td>{sellerName}</td>
+        <td className="text-red-500">{email}</td>
+        <td className="text-yellow-500">{"$" + price}</td>
+        <td className="text-orange-500">{quantity}</td>
+
+        <th>
+          <Link
+            to={`/updateToy/${_id}`}
+            className="text-white bg-gray-900 px-6 py-3 rounded-sm hover:bg-gray-950 my-10"
+          >
+            Update
+          </Link>
+        </th>
+      </tr>
+    </tbody>
+  );
 };
 
 export default Toys;

@@ -1,6 +1,4 @@
-import {
-  createBrowserRouter
-} from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layout/Main";
 import Home from "../../pages/Home/Home/Home";
 import ErrorPage from "../../shared/ErrorPage/ErrorPage";
@@ -21,44 +19,66 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
-        path: '/',
-        element: <Home></Home>
+        path: "/",
+        element: <Home></Home>,
       },
       {
-        path: '/login',
-        element: <Login></Login>
+        path: "/login",
+        element: <Login></Login>,
       },
       {
-        path: '/register',
-        element: <Register></Register>
+        path: "/register",
+        element: <Register></Register>,
       },
       {
-        path: '/blogs',
-        element: <Blogs></Blogs>
+        path: "/blogs",
+        element: <Blogs></Blogs>,
       },
       {
-        path: '/addToy',
-        element: <PrivateRouter><AddToys></AddToys></PrivateRouter>
+        path: "/addToy",
+        element: (
+          <PrivateRouter>
+            <AddToys></AddToys>
+          </PrivateRouter>
+        ),
       },
       {
-        path: '/allToys',
-        element: <AllToys></AllToys>
+        path: "/allToys",
+        element: <AllToys></AllToys>,
       },
       {
-        path: '/details/:id',
-        element: <PrivateRouter><Details></Details></PrivateRouter>,
-        loader: ({ params }) => fetch(`https://toys-marketplace-server-agmt-11.vercel.app/toysDetails/${params.id}`)
+        path: "/details/:id",
+        element: (
+          <PrivateRouter>
+            <Details></Details>
+          </PrivateRouter>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `https://toys-marketplace-server-agmt-11.vercel.app/toysDetails/${params.id}`
+          ),
       },
       {
-        path: '/myToys/:email',
-        element: <PrivateRouter><MyToys></MyToys></PrivateRouter>,
+        path: "/myToys/:email",
+        element: (
+          <PrivateRouter>
+            <MyToys></MyToys>
+          </PrivateRouter>
+        ),
       },
       {
-        path: '/updateToy/:id',
-        element: <PrivateRouter><UpdateToy></UpdateToy></PrivateRouter>,
-        loader: ({params}) => fetch(`https://toys-marketplace-server-agmt-11.vercel.app/toysDetails/${params.id}`)
-      }
-    ]
+        path: "/updateToy/:id",
+        element: (
+          <PrivateRouter>
+            <UpdateToy></UpdateToy>
+          </PrivateRouter>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `https://toys-marketplace-server-agmt-11.vercel.app/toysDetails/${params.id}`
+          ),
+      },
+    ],
   },
 ]);
 
