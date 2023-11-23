@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 import { Helmet } from "react-helmet";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 import { Title } from "../../components/hooks/container/Title/Title";
+import Container from "../../components/hooks/container/Container";
 
 const UpdateToy = () => {
   useEffect(() => {
@@ -57,58 +58,60 @@ const UpdateToy = () => {
       .catch((error) => console.log(error));
   };
   return (
-    <div className="mx-3 md:mx-5 pt-28 text-gray-500 rounded-3xl p-10">
-      <Helmet>
-        <title>Update toy</title>
-      </Helmet>
-      <Title title={"Update your Toys"} />
-      <form
-        data-aos="fade-right"
-        data-aos-duration="3000"
-        onSubmit={updateToyHandler}
-        className="w-full mb-16 space-y-3 border p-3 rounded-xl shadow-2xl md:p-10"
-      >
-        {/* row1 */}
-        <div className="md:flex items-center  gap-5 full">
-          <div className="space-y-2 font-bold w-full md:w-1/2">
-            <h3>Price</h3>
-            <input
-              type="number"
-              required
-              name="price"
-              defaultValue={price}
-              className="input input-bordered w-full text-gray-500"
-            />
+    <Container>
+      <div className="mx-3 md:mx-5 pt-28 text-gray-500 rounded-3xl p-10">
+        <Helmet>
+          <title>Update toy</title>
+        </Helmet>
+        <Title title={"Update your Toys"} />
+        <form
+          data-aos="fade-right"
+          data-aos-duration="3000"
+          onSubmit={updateToyHandler}
+          className="w-full mb-16 space-y-3 border p-3 rounded-xl shadow-2xl md:p-10"
+        >
+          {/* row1 */}
+          <div className="md:flex items-center  gap-5 full">
+            <div className="space-y-2 font-bold w-full md:w-1/2">
+              <h3>Price</h3>
+              <input
+                type="number"
+                required
+                name="price"
+                defaultValue={price}
+                className="input input-bordered w-full text-gray-500"
+              />
+            </div>
+            <div className="space-y-2 font-bold   md:w-1/2">
+              <h3>Quantity</h3>
+              <input
+                type="number"
+                required
+                name="quantity"
+                defaultValue={quantity}
+                className="input input-bordered w-full text-gray-500"
+              />
+            </div>
           </div>
-          <div className="space-y-2 font-bold   md:w-1/2">
-            <h3>Quantity</h3>
-            <input
-              type="number"
-              required
-              name="quantity"
-              defaultValue={quantity}
-              className="input input-bordered w-full text-gray-500"
-            />
+          {/* row 2 */}
+          <div className="md:flex items-center justify-center gap-5 mb-20">
+            <div className="space-y-2 font-bold w-full md:w-1/2">
+              <h3 className="text-center">Description</h3>
+              <textarea
+                type="text"
+                required
+                name="description"
+                defaultValue={description}
+                className="textarea textarea-bordered w-full text-gray-500"
+              />
+            </div>
           </div>
-        </div>
-        {/* row 2 */}
-        <div className="md:flex items-center justify-center gap-5 mb-20">
-          <div className="space-y-2 font-bold w-full md:w-1/2">
-            <h3 className="text-center">Description</h3>
-            <textarea
-              type="text"
-              required
-              name="description"
-              defaultValue={description}
-              className="textarea textarea-bordered w-full text-gray-500"
-            />
-          </div>
-        </div>
-        <button className="text-white bg-rose-500 hover:bg-rose-600 px-6 py-3 w-full text-center rounded-sm">
-          Update A Toy
-        </button>
-      </form>
-    </div>
+          <button className="text-white bg-rose-500 hover:bg-rose-600 px-6 py-3 w-full text-center rounded-sm">
+            Update A Toy
+          </button>
+        </form>
+      </div>
+    </Container>
   );
 };
 
