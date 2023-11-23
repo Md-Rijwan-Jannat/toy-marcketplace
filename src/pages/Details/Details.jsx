@@ -53,13 +53,15 @@ const Details = () => {
           <div className="mt-10  flex flex-col md:flex-row gap-10 m-2 rounded">
             <div className="w-full md:w-1/2 rounded flex flex-col items-center justify-center">
               <img className="w-full lg:w-[300px]" src={photo} alt="" />
-              <button className="bg-gradient-to-r from-[#b3d8ee] to-[#d2e0ee] w-full text-center hover:bg-green-200 px-10 py-3 mx-5 justify-center rounded-md my-3 flex items-center gap-2 text-rose-600 font-sans">
-                <MdToys /> Delivery Charge:{" "}
-                <span className="text-green-600 font-sans"> Free </span>
-              </button>
-              <button className="bg-rose-500 hover:bg-rose-600 px-10 py-3 text-white my-3 flex items-center justify-center gap-2 w-full">
-                <FiShoppingCart /> Add to Cart
-              </button>
+              <div className=" hidden md:block">
+                <button className="bg-gradient-to-r from-[#b3d8ee] to-[#d2e0ee] w-full text-center hover:bg-green-200 px-10 py-3 mx-5 justify-center rounded-md my-3 flex items-center gap-2 text-rose-600 font-sans">
+                  <MdToys /> Delivery Charge:{" "}
+                  <span className="text-green-600 font-sans"> Free </span>
+                </button>
+                <button className="bg-rose-500 hover:bg-rose-600 px-10 py-3 text-white my-3 flex items-center justify-center gap-2 w-full">
+                  <FiShoppingCart /> Add to Cart
+                </button>
+              </div>
             </div>
             <div className="flex flex-col items-start w-full md:w-1/2">
               <h2 className="text-4xl font-semibold mb-5">{toyName}</h2>
@@ -93,6 +95,15 @@ const Details = () => {
                 </div>
               </div>
               <p className="my-3 text-sm">{description}</p>
+            </div>
+            <div className=" block md:hidden">
+              <button className="bg-gradient-to-r from-[#d1e8f5] to-[#d2e0ee] w-full text-center hover:bg-green-200 px-10 py-3 justify-center my-3 flex items-center gap-2 text-rose-600 font-sans">
+                <MdToys /> Delivery Charge:{" "}
+                <span className="text-green-600 font-sans"> Free </span>
+              </button>
+              <button className="bg-rose-500 hover:bg-rose-600 px-10 py-3 text-white my-3 flex items-center justify-center gap-2 w-full">
+                <FiShoppingCart /> Add to Cart
+              </button>
             </div>
           </div>
         </div>
