@@ -3,8 +3,8 @@ import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { Helmet } from "react-helmet";
-import Container from "../../components/hooks/container/Container";
-import { Title } from "../../components/hooks/container/Title/Title";
+import Container from "../../components/container/Container";
+import { Title } from "../../components/Title/Title";
 
 const Blogs = () => {
   useEffect(() => {

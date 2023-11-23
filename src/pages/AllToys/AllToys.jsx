@@ -6,8 +6,8 @@ import "aos/dist/aos.css";
 import { FaArrowRight } from "react-icons/fa";
 import { Helmet } from "react-helmet";
 import useToys from "../../components/hooks/useToys";
-import Container from "../../components/hooks/container/Container";
-import { Loader } from "../../components/hooks/container/loader/Loader";
+import Container from "../../components/container/Container";
+import { Loader } from "../../components/loader/Loader";
 
 const AllToys = () => {
   useEffect(() => {
@@ -53,31 +53,29 @@ const AllToys = () => {
         <div
           data-aos="fade-up"
           data-aos-duration="3000"
-          className="flex flex-col items-center my-16 text-rose-500"
+          className="flex flex-col items-center mt-16 text-rose-500"
         >
-          <h2 className="text-3xl style ">
+          <h2 className="text-3xl style text-start md:text-center">
             All Toys are Here{" "}
             <span className="text-5xl text-rose-500">{toys.length}</span>
           </h2>
           <hr className="w-1/3" />
         </div>
         {/* search */}
-        <div className="md:relative flex  items-center justify-center rounded-none my-24">
+        <div className="md:relative flex flex-col items-start rounded-none mb-24 mt-2">
+          <p className="text-2xl text-gray-500 mb-2">Search</p>
           <input
             type="search"
             required
             name="search"
             placeholder="search"
-            className="input input-bordered w-1/3"
+            className="input input-bordered w-10/12 md:w-1/2 lg:w-1/3"
             value={searchTerm}
             onChange={handleSearchChange}
           />
-          <button className="md:absolute md:right-[250px] lg:right-80 xl:right-[400px] bg-slate-900 px-2 py-3 rounded-md text-white  hover:bg-slate-800">
-            Search
-          </button>
         </div>
 
-        {!isLoading ? (
+        {!isLoading && (
           <div className="overflow-x-auto md:overflow-hidden w-full mt-5 mb-10">
             <table className="table w-full">
               {/* head */}
@@ -99,7 +97,7 @@ const AllToys = () => {
               </thead>
               {filteredToys.length === 0 ? (
                 <div className="relative z-40">
-                  <Loader />{" "}
+                  <Loader />
                 </div>
               ) : (
                 filteredToys
@@ -107,10 +105,6 @@ const AllToys = () => {
                   .map((toy) => <Toy key={toy._id} toy={toy} />)
               )}
             </table>
-          </div>
-        ) : (
-          <div className="w-full h-[500px] flex items-center text-black justify-center">
-            <span className="loading loading-dots loading-md"></span>
           </div>
         )}
 

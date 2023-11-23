@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Container from "../../../components/hooks/container/Container";
+import Container from "../../../components/container/Container";
 import { useEffect } from "react";
 import Aos from "aos";
 

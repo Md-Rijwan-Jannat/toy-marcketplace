@@ -4,7 +4,7 @@ import "react-tabs/style/react-tabs.css";
 import Category from "./Category";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import { Loader } from "../../../components/hooks/container/loader/Loader";
+import { Loader } from "../../../components/loader/Loader";
 
 const Categories = () => {
   const [selectedTab, setSelectedTab] = useState(0); // Initialize with the default active tab index

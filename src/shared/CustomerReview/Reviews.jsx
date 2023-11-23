@@ -4,8 +4,8 @@ import { useEffect } from "react";
 import Aos from "aos";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Loader } from "../../components/hooks/container/loader/Loader";
-import { Title } from "../../components/hooks/container/Title/Title";
+import { Loader } from "../../components/loader/Loader";
+import { Title } from "../../components/Title/Title";
 
 const Testimonial = () => {
   const [reviews, setReviews] = useState([]);

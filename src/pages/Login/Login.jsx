@@ -6,7 +6,7 @@ import Google from "../../shared/GoogleProvider/Google";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { Helmet } from "react-helmet";
-import Container from "../../components/hooks/container/Container";
+import Container from "../../components/container/Container";
 
 const Login = () => {
   useEffect(() => {

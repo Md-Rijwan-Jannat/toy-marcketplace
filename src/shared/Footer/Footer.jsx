@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaRegCopyright } from "react-icons/fa";
-import Container from "../../components/hooks/container/Container";
+import Container from "../../components/container/Container";
 import toy_pogo from "../../assets/toy-logo-removebg-preview.png";
 
 const Footer = () => {

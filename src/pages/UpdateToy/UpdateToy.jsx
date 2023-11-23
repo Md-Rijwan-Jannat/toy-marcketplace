@@ -5,8 +5,8 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
-import { Title } from "../../components/hooks/container/Title/Title";
-import Container from "../../components/hooks/container/Container";
+import { Title } from "../../components/Title/Title";
+import Container from "../../components/container/Container";
 
 const UpdateToy = () => {
   useEffect(() => {

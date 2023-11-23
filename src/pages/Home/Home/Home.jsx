@@ -1,7 +1,7 @@
 import Banner from "../Banner/Banner";
 import Categories from "../CategoryToys/Categories";
 import Reviews from "../../../shared/CustomerReview/Reviews";
-import Container from "../../../components/hooks/container/Container";
+import Container from "../../../components/container/Container";
 import { Informations } from "../Informations/Informations";
 import { Gallery } from "../../../shared/Gallery/Gallery";
 

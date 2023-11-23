@@ -4,8 +4,8 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Loader } from "../../components/hooks/container/loader/Loader";
-import { Title } from "../../components/hooks/container/Title/Title";
+import { Loader } from "../../components/loader/Loader";
+import { Title } from "../../components/Title/Title";
 
 export const Gallery = () => {
   useEffect(() => {

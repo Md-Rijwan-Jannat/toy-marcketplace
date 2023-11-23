@@ -5,8 +5,8 @@ import "aos/dist/aos.css";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 import { Helmet } from "react-helmet";
 import useMyToys from "../../components/hooks/useMyToys";
-import Container from "../../components/hooks/container/Container";
-import { Loader } from "../../components/hooks/container/loader/Loader";
+import Container from "../../components/container/Container";
+import { Loader } from "../../components/loader/Loader";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
@@ -72,7 +72,7 @@ const MyToys = () => {
             )}
           </div>
         ) : (
-          <div className="w-full h-[500px] flex items-center justify-center">
+          <div className="w-[1400px] h-screen flex items-center justify-center">
             <span className="loading loading-dots loading-md"></span>
           </div>
         )}

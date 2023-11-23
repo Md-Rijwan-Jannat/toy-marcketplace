@@ -3,7 +3,7 @@ import "./Informations.css";
 
 import Aos from "aos";
 import { useEffect } from "react";
-import { Title } from "../../../components/hooks/container/Title/Title";
+import { Title } from "../../../components/Title/Title";
 
 export const Informations = () => {
   useEffect(() => {

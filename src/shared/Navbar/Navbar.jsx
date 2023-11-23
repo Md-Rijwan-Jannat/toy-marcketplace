@@ -3,7 +3,7 @@ import { useContext } from "react";
 import toast from "react-hot-toast";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
-import Container from "../../components/hooks/container/Container";
+import Container from "../../components/container/Container";
 import toy_logo from "../../assets/toy-logo-removebg-preview.png";
 import { useState } from "react";
 
@@ -84,7 +84,7 @@ function Navbar() {
               isScrolled ? "scrolled-background" : ""
             }`}
           >
-            <a className="text-3xl font-bold leading-none" href="#">
+            <a className="text-3xl font-semibold leading-none" href="#">
               <img
                 className="w-[60px] md:w-[140px] h-fit rounded-3xl"
                 src={toy_logo}
@@ -108,8 +108,8 @@ function Navbar() {
                 <NavLink
                   className={({ isActive }) =>
                     isActive
-                      ? "text-sm text-rose-600 font-bold mx-3 border-b-2 border-rose-500 uppercase"
-                      : "uppercase mx-3 hover:border-b-2 border-rose-500 text-sm text-gray-900 hover:text-gray-950"
+                      ? "text-sm text-rose-600 font-semibold mx-3 border-b-[3px] border-rose-500 uppercase"
+                      : "uppercase mx-3 hover:border-b-[3px] border-rose-500 text-sm text-gray-900 font-semibold hover:text-gray-950"
                   }
                   to={"/"}
                 >
@@ -120,8 +120,8 @@ function Navbar() {
                 <NavLink
                   className={({ isActive }) =>
                     isActive
-                      ? "text-sm text-rose-600 font-bold mx-3 border-b-2 border-rose-500 uppercase"
-                      : "uppercase mx-3 hover:border-b-2 border-rose-500 text-sm text-gray-900 hover:text-gray-950"
+                      ? "text-sm text-rose-600 font-semibold mx-3 border-b-[3px] border-rose-500 uppercase"
+                      : "uppercase mx-3 hover:border-b-[3px] border-rose-500 text-sm text-gray-900 font-semibold hover:text-gray-950"
                   }
                   to={"/allToys"}
                 >
@@ -134,8 +134,8 @@ function Navbar() {
                     <NavLink
                       className={({ isActive }) =>
                         isActive
-                          ? "text-sm text-rose-600 font-bold mx-3 border-b-2 border-rose-500 uppercase"
-                          : "uppercase mx-3 hover:border-b-2 border-rose-500 text-sm text-gray-900 hover:text-gray-950"
+                          ? "text-sm text-rose-600 font-semibold mx-3 border-b-[3px] border-rose-500 uppercase"
+                          : "uppercase mx-3 hover:border-b-[3px] border-rose-500 text-sm text-gray-900 font-semibold hover:text-gray-950"
                       }
                       to={`/myToys/${user?.email}`}
                     >
@@ -146,8 +146,8 @@ function Navbar() {
                     <NavLink
                       className={({ isActive }) =>
                         isActive
-                          ? "text-sm text-rose-600 font-bold mx-3 border-b-2 border-rose-500 uppercase"
-                          : "uppercase mx-3 hover:border-b-2 border-rose-500 text-sm text-gray-900 hover:text-gray-950"
+                          ? "text-sm text-rose-600 font-semibold mx-3 border-b-[3px] border-rose-500 uppercase"
+                          : "uppercase mx-3 hover:border-b-[3px] border-rose-500 text-sm text-gray-900 font-semibold hover:text-gray-950"
                       }
                       to={"/addToy"}
                     >
@@ -160,8 +160,8 @@ function Navbar() {
                 <NavLink
                   className={({ isActive }) =>
                     isActive
-                      ? "text-sm text-rose-600 font-bold mx-3 border-b-2 border-rose-500 uppercase"
-                      : "uppercase mx-3 hover:border-b-2 border-rose-500 text-sm text-gray-900 hover:text-gray-950"
+                      ? "text-sm text-rose-600 font-semibold mx-3 border-b-[3px] border-rose-500 uppercase"
+                      : "uppercase mx-3 hover:border-b-[3px] border-rose-500 text-sm text-gray-900 font-semibold hover:text-gray-950"
                   }
                   to={"/blogs"}
                 >
@@ -172,26 +172,27 @@ function Navbar() {
             {user ? (
               <NavLink
                 to={"login"}
-                className="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold rounded-xl transition duration-200"
+                className="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-rose-500 hover:bg-rose-600 text-sm text-white font-semibold rounded-xl transition duration-200"
                 onClick={logOutHandler}
               >
                 Logout
               </NavLink>
             ) : (
-              <NavLink
-                to="/signin"
-                className="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold rounded-xl transition duration-200"
-              >
-                Sign In
-              </NavLink>
+              <>
+                <NavLink
+                  to="/login"
+                  className="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-semibold rounded-xl transition duration-200"
+                >
+                  Sign In
+                </NavLink>
+                <NavLink
+                  to="/register"
+                  className="hidden lg:inline-block py-2 px-6 bg-rose-500 hover:bg-rose-600 text-sm text-white font-semibold rounded-xl transition duration-200"
+                >
+                  Sign Up
+                </NavLink>
+              </>
             )}
-
-            <NavLink
-              to="/register"
-              className="hidden lg:inline-block py-2 px-6 bg-rose-500 hover:bg-rose-600 text-sm text-white font-bold rounded-xl transition duration-200"
-            >
-              Sign Up
-            </NavLink>
           </nav>
         </div>
       </Container>
@@ -199,7 +200,7 @@ function Navbar() {
         <div className="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
         <nav className="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
           <div className="flex items-center mb-8">
-            <a className="mr-auto text-3xl font-bold leading-none" href="#">
+            <a className="mr-auto text-3xl font-semibold leading-none" href="#">
               <img
                 className="w-[60px] md:w-[140px] h-fit rounded-3xl"
                 src={toy_logo}
@@ -275,28 +276,32 @@ function Navbar() {
                 <li>
                   <NavLink
                     to={"login"}
-                    className="block py-2 px-4 bg-gray-50 text-sm text-gray-900 font-semibold rounded transition duration-200 hover:bg-gray-100"
+                    className="block mt-2 py-2 px-4 bg-rose-500 text-sm text-white font-semibold rounded transition duration-200 hover:bg-rose-600"
                     onClick={logOutHandler}
                   >
                     Logout
                   </NavLink>
                 </li>
               ) : (
-                <li>
-                  <NavLink
-                    className="block py-2 px-4 bg-gray-50 text-sm text-gray-900 font-semibold rounded transition duration-200 hover:bg-gray-100"
-                    to={"/login"}
-                  >
-                    Sign In
-                  </NavLink>
-                </li>
+                <>
+                  <li>
+                    <NavLink
+                      className="block py-2 px-4 bg-gray-50 text-sm text-gray-900 font-semibold rounded transition duration-200 hover:bg-gray-100"
+                      to={"/login"}
+                    >
+                      Sign In
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/register"
+                      className="block mt-2 py-2 px-4 bg-rose-500 text-sm text-white font-semibold rounded transition duration-200 hover:bg-rose-600"
+                    >
+                      Sign Up
+                    </NavLink>
+                  </li>
+                </>
               )}
-              <NavLink
-                to="/register"
-                className="block mt-2 py-2 px-4 bg-rose-500 text-sm text-white font-semibold rounded transition duration-200 hover:bg-rose-600"
-              >
-                Sign Up
-              </NavLink>
             </div>
           </div>
         </nav>
